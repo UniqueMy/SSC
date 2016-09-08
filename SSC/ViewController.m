@@ -7,8 +7,7 @@
 //
 
 
-
-
+#import "CSVModel.h"
 #import "ViewController.h"
 #import "MainViewController.h"
 
@@ -19,6 +18,10 @@
 @implementation ViewController
 {
     NSArray *nameArray;
+    NSArray *nowArray;
+    NSArray *yesterdayArray;
+    NSString *nowDateString;
+    NSString *yesterdayDateString;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,13 +46,52 @@
         [self.view addSubview:button];
     }
     
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    // 获取当前时间
+    nowDateString         = [NSString stringWithFormat:@"%ld",(long)[[NSDate date] timeIntervalSince1970]];
+    
+    // 获取昨天时间
+    NSDate *yesterDayDate = [NSDate dateWithTimeIntervalSinceNow:-60*60*24];
+    yesterdayDateString   = [NSString stringWithFormat:@"%ld",(long)[yesterDayDate timeIntervalSince1970]];
+    
+    [self saveCSVData];
+    
 }
+
+- (void)saveCSVData {
+    
+    NSArray * persons = [[GKDatabaseManager sharedManager] selecteDataWithClass:[CSVModel class]];
+    NSLog(@"person.count %lu",(unsigned long)persons.count);
+    if (persons.count == 0) {
+        NSLog(@"3333333");
+        CSVModel *csv     = [[CSVModel alloc] init];
+        csv.fiveStarArray = [HttpTool readCSVData];
+        
+        [[GKDatabaseManager sharedManager] openDatabase];
+        [[GKDatabaseManager sharedManager] creatTableWithClassName:[CSVModel class]];
+        [[GKDatabaseManager sharedManager] insertDataFromObject:csv];
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+
 
 - (void)buttonClick:(UIButton *)button {
     
-    MainViewController *mainVC = [[MainViewController alloc] init];
-    mainVC.viewName = nameArray[button.tag - 1];
     
+    MainViewController *mainVC = [[MainViewController alloc] init];
+    mainVC.viewName            = nameArray[button.tag - 1];
+    mainVC.buttonTag           = button.tag - 1;
+    mainVC.nowString           = nowDateString;
+    mainVC.yesterdayString     = yesterdayDateString;
     [self presentViewController:mainVC animated:YES completion:^{}];
 }
 

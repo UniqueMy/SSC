@@ -11,5 +11,8 @@
 @interface MainViewController : UIViewController
 
 @property (nonatomic,strong) NSString *viewName;
+@property (nonatomic)        NSInteger buttonTag;
 
+@property (nonatomic,strong) NSString *nowString;
+@property (nonatomic,strong) NSString *yesterdayString;
 @end

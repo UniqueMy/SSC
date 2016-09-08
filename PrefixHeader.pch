@@ -20,6 +20,7 @@
  */
 #define Adaptive(number) [UIScreen mainScreen].bounds.size.height / (667.000000 / number)
 
-
-
+#import "AFNetworking.h"
+#import "HttpTool.h"
+#import "GKDatabase.h"
 #endif /* PrefixHeader_pch */

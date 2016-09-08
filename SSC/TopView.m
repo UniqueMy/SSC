@@ -68,7 +68,7 @@
 
 - (void)backClick:(UIButton *)button {
     
-    [viewController presentViewController:[ViewController new] animated:YES completion:^{}];
+    [viewController dismissViewControllerAnimated:YES completion:nil];
    
 }
 @end
