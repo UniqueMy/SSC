@@ -17,6 +17,6 @@ typedef void (^FailBlock)(NSError* error);
 
 + (void)postWithUrl:(NSString*)urlStr params:(NSDictionary*)params body:(NSArray *)body progress:(ProgressBlock)progress success:(SuccessBlock)success;
 
-+(NSArray *)readCSVData;
++(NSMutableArray *)readCSVDataWithNSString:(NSString *)string;
 
 @end

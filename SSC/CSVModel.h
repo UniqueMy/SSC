@@ -10,5 +10,7 @@
 
 @interface CSVModel : NSObject
 
-@property (nonatomic,strong) NSArray *fiveStarArray;
+@property (nonatomic,strong) NSMutableArray  *fiveStarArray;
+@property (nonatomic,strong) NSMutableArray  *danmaArray;
++ (instancetype)sharedModelManager;
 @end

@@ -61,25 +61,30 @@
 
 - (void)saveCSVData {
     
-    NSArray * persons = [[GKDatabaseManager sharedManager] selecteDataWithClass:[CSVModel class]];
-    NSLog(@"person.count %lu",(unsigned long)persons.count);
-    if (persons.count == 0) {
-        NSLog(@"3333333");
-        CSVModel *csv     = [[CSVModel alloc] init];
-        csv.fiveStarArray = [HttpTool readCSVData];
+    CSVModel *csv     = [CSVModel sharedModelManager];
+    
+    dispatch_queue_t async1 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    dispatch_async(async1, ^{
         
-        [[GKDatabaseManager sharedManager] openDatabase];
-        [[GKDatabaseManager sharedManager] creatTableWithClassName:[CSVModel class]];
-        [[GKDatabaseManager sharedManager] insertDataFromObject:csv];
-    }
+        csv.fiveStarArray = [HttpTool readCSVDataWithNSString:@"五星数据"];
+         [csv.fiveStarArray insertObject:@"00049" atIndex:0];
+        [csv.fiveStarArray removeLastObject];
+        
+        
+        
+    });
     
+    dispatch_queue_t async2 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     
-    
-    
-    
-    
-    
-    
+    dispatch_async(async2, ^{
+        
+        csv.danmaArray = [HttpTool readCSVDataWithNSString:@"胆码"];
+        [csv.danmaArray insertObject:@"00012" atIndex:0];
+      
+    });
+
+   
     
 }
 

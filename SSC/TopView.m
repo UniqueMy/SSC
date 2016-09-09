@@ -8,11 +8,13 @@
 
 #import "TopView.h"
 #import "ViewController.h"
-
+#import "CSVModel.h"
 @implementation TopView
 {
     UILabel *topLabel;
     UIViewController *viewController;
+    NSString   *copyString;
+    
 }
 - (instancetype)initWithFrame:(CGRect)frame viewController:(UIViewController *)controller
 {
@@ -53,22 +55,58 @@
     [copyButton addTarget:self action:@selector(copyButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:copyButton];
     
+    [self copyData];
+    
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    topLabel.text      = [NSString stringWithFormat:@"%@时时彩数据统计",_viewName];
+    topLabel.text    = [NSString stringWithFormat:@"%@时时彩数据统计",_viewName];
 }
 
+- (void)copyData {
+    
+    CSVModel *csv           = [CSVModel sharedModelManager];
+    dispatch_queue_t async2 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    dispatch_async(async2, ^{
+        
+        copyString = [csv.fiveStarArray componentsJoinedByString:@","];
+    });
+}
 
 - (void)copyButtonClick:(UIButton *)button {
     
-    NSLog(@"点击了复制按钮");
+    dispatch_queue_t async1 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(async1, ^{
+        
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        pasteboard.string = copyString;
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"复制成功" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [viewController presentViewController:alertController animated:YES completion:^{
+            [NSTimer scheduledTimerWithTimeInterval:0.5f target:self selector:@selector(creatAlert:) userInfo:alertController repeats:NO];
+            
+            
+        }];
+        
+    });
+    
+}
+
+- (void)creatAlert:(NSTimer *)timer{
+    
+    UIAlertController *alert = [timer userInfo];
+    
+    [alert dismissViewControllerAnimated:YES completion:nil];
+    
+    alert = nil;
+    
 }
 
 - (void)backClick:(UIButton *)button {
     
     [viewController dismissViewControllerAnimated:YES completion:nil];
-   
+    
 }
 @end

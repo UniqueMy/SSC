@@ -47,7 +47,6 @@
             
             
             
-            
             // 任何情况 返回数据 并打印数据
             success(dict);
           //  NSLog(@"打印 URL %@  Data %@",urlStr,dict);
@@ -58,15 +57,18 @@
     }];
 }
 
-+(NSArray *)readCSVData{
++(NSMutableArray *)readCSVDataWithNSString:(NSString *)string{
     NSMutableArray *_InfoArray;
     if (_InfoArray) {
         return NULL;
     }
-    _InfoArray=[[NSMutableArray alloc]init];
+    _InfoArray=[[NSMutableArray alloc]initWithCapacity:0];
     
-    NSString *filepath=[[NSBundle mainBundle] pathForResource:@"fiveStar" ofType:@"csv"];
+    
+    
+    NSString *filepath=[[NSBundle mainBundle] pathForResource:string ofType:@"csv"];
     FILE *fp=fopen([filepath UTF8String], "r");
+   
     if (fp) {
         char buf[BUFSIZ];
         fgets(buf, BUFSIZ, fp);
@@ -78,12 +80,13 @@
             NSString *s=[[NSString alloc]initWithUTF8String:(const char *)buf];
             NSString *ss=[s stringByReplacingOccurrencesOfString:@"\r" withString:@""];
             ss=[ss stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-            NSArray *a=[ss componentsSeparatedByString:@","];
             
-            [_InfoArray addObject:a];
+            
+           
+            
+            [_InfoArray addObject:ss];
         }
     }
-    NSLog(@"%lu",(unsigned long)_InfoArray.count);
     return _InfoArray;
 }
 

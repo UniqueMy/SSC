@@ -8,13 +8,19 @@
 #import "MainModel.h"
 #import "TableViewCell.h"
 #import "CSVModel.h"
+#import <BmobSDK/Bmob.h>
 @implementation TableViewCell
-
+{
+    CSVModel *csvModel;
+    BOOL      success;
+   
+}
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        
+        csvModel = [CSVModel sharedModelManager];
+       
         // 把自定义的控件 变成了单元格的属性
         self.backgroundColor = [UIColor colorWithRed:217/255.0 green:223/255.0 blue:231/255.0 alpha:1];
         
@@ -23,10 +29,10 @@
         bottomLine.backgroundColor = [UIColor grayColor];
         [self addSubview:bottomLine];
         
-        CGFloat labelWidth = (viewWidth - Adaptive(100)) / 4;
+        CGFloat labelWidth = viewWidth  / 4;
         
         _timesNumberLabel = [[UILabel alloc] init];
-        _timesNumberLabel.frame    = CGRectMake(0, 0, Adaptive(100), Adaptive(30));
+        _timesNumberLabel.frame    = CGRectMake(0, 0, labelWidth, Adaptive(30));
         // _timesNumberLabel.text     = @"20160808087";
         _timesNumberLabel.textAlignment = 1;
         _timesNumberLabel.textColor = [UIColor blackColor];
@@ -36,7 +42,7 @@
         
         for (int a = 0; a < 4; a++) {
             UILabel *line = [[UILabel alloc] init];
-            line.frame    = CGRectMake(Adaptive(100) + labelWidth *a, 0, Adaptive(1), Adaptive(30));
+            line.frame    = CGRectMake(labelWidth *(a + 1), 0, Adaptive(1), Adaptive(30));
             line.backgroundColor = [UIColor grayColor];
             [self addSubview:line];
             
@@ -59,7 +65,7 @@
         [self addSubview:_totalLabel];
         
         _YNLabel = [[UILabel alloc] init];
-        _YNLabel.frame    = CGRectMake(CGRectGetMaxX(_totalLabel.frame), 0, labelWidth, Adaptive(30));
+        _YNLabel.frame    = CGRectMake(CGRectGetMaxX(_totalLabel.frame) +Adaptive(1) ,0, labelWidth - 1, Adaptive(29));
         _YNLabel.text     = @"Y";
         _YNLabel.textAlignment = 1;
         _YNLabel.textColor = [UIColor blackColor];
@@ -85,25 +91,28 @@
     _timesNumberLabel.text  = mainModel.timesNumberString;
     _publishLabel.text      = mainModel.publishString;
     _totalLabel.text        = mainModel.totalString;
-     dispatch_queue_t async1 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    
+    
+    
+    dispatch_queue_t async1 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     
     dispatch_async(async1, ^{
         
-          NSArray * persons = [[GKDatabaseManager sharedManager] selecteDataWithClass:[CSVModel class]];
+        success = [csvModel.fiveStarArray containsObject:mainModel.publishString] ? YES : NO;
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
             
-                  NSLog(@"persons %@",persons);
-            
+            if (success == YES) {
+                _YNLabel.backgroundColor = [UIColor colorWithRed:0 green:177/255.0 blue:88/255.0 alpha:1];
+                _YNLabel.text            = @"Y";
+            } else {
+                _YNLabel.backgroundColor = [UIColor colorWithRed:217/255.0 green:223/255.0 blue:231/255.0 alpha:1];
+                _YNLabel.text            = @"N";
+            }
         });
-        
     });
-
-    
-    
-  
-
 }
 
 @end
