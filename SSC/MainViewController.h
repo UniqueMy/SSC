@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MainModel.h"
+
+
 
 @interface MainViewController : UIViewController
 
@@ -15,4 +18,7 @@
 
 @property (nonatomic,strong) NSString *nowString;
 @property (nonatomic,strong) NSString *yesterdayString;
+
+@property (nonatomic,strong) MainModel *mainModel;
+
 @end

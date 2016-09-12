@@ -25,66 +25,65 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithRed:214/255.0 green:220/255.0 blue:228/255.0 alpha:1];
+    self.view.backgroundColor = BaseGryColor;
     
     CGFloat buttonWidth   = Adaptive(150);
-    CGFloat buttonOriginY = (viewHeight - buttonWidth*3) / 4;
+    CGFloat buttonOriginY = (viewHeight - buttonWidth * 3) / 4;
     nameArray             = @[@"重庆",@"天津",@"新疆"];
     for (int a = 0;a < 3; a++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        button.frame     = CGRectMake((viewWidth - buttonWidth) / 2, buttonOriginY + (buttonOriginY + buttonWidth) * a, buttonWidth,buttonWidth);
+        button.frame     = CGRectMake((viewWidth - buttonWidth) / 2,
+                                      buttonOriginY + (buttonOriginY + buttonWidth) * a,
+                                      buttonWidth,
+                                      buttonWidth);
         button.layer.cornerRadius  = button.bounds.size.width / 2;
         button.layer.masksToBounds = YES;
         button.layer.borderWidth   = 0.5;
         button.layer.borderColor   = [UIColor blackColor].CGColor;
+        button.titleLabel.font     = [UIFont systemFontOfSize:Adaptive(18)];
+        button.backgroundColor     = [UIColor colorWithRed:111/255.0 green:173/255.0 blue:219/255.0 alpha:1];
+        button.tag                 = a + 1;
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [button setTitle:nameArray[a] forState:UIControlStateNormal];
-        button.titleLabel.font = [UIFont systemFontOfSize:Adaptive(18)];
-        button.backgroundColor = [UIColor colorWithRed:111/255.0 green:173/255.0 blue:219/255.0 alpha:1];
-        button.tag = a + 1;
         [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
     }
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    // 获取当前时间
-    nowDateString         = [NSString stringWithFormat:@"%ld",(long)[[NSDate date] timeIntervalSince1970]];
-    
-    // 获取昨天时间
-    NSDate *yesterDayDate = [NSDate dateWithTimeIntervalSinceNow:-60*60*24];
-    yesterdayDateString   = [NSString stringWithFormat:@"%ld",(long)[yesterDayDate timeIntervalSince1970]];
-    
-    [self saveCSVData];
-    
 }
 
-- (void)saveCSVData {
+#pragma mark -- 分线程请求三个数据
+- (void)startRequestData {
     
-    CSVModel *csv     = [CSVModel sharedModelManager];
-    
+    // 重庆
     dispatch_queue_t async1 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     
     dispatch_async(async1, ^{
         
-        csv.fiveStarArray = [HttpTool readCSVDataWithNSString:@"五星数据"];
-         [csv.fiveStarArray insertObject:@"00049" atIndex:0];
-        [csv.fiveStarArray removeLastObject];
-        
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+        });
         
     });
     
+    // 天津
     dispatch_queue_t async2 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    
     dispatch_async(async2, ^{
         
-        csv.danmaArray = [HttpTool readCSVDataWithNSString:@"胆码"];
-        [csv.danmaArray insertObject:@"00012" atIndex:0];
-      
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+        });
+        
     });
-
-   
+    
+    // 新疆
+    dispatch_queue_t async3 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(async3, ^{
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+        });
+        
+    });
+    
     
 }
 

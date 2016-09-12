@@ -14,6 +14,7 @@
 #import "HeadView.h"
 #import "MainModel.h"
 #import "MJRefresh.h"
+#import "BottomView.h"
 @interface MainViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
 
@@ -25,18 +26,16 @@
     BOOL success;
     int successNumber;
     NSString *allDataUrl;
+    BottomView *bottomView;
     
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     
+    self.view.backgroundColor = BaseGryColor;
     
-    
-    
-    self.view.backgroundColor = [UIColor colorWithRed:217/255.0 green:223/255.0 blue:231/255.0 alpha:1];
-    
-    TopView *topView = [[TopView alloc] initWithFrame:CGRectMake(0, 0, viewWidth, 64) viewController:self];
+    TopView *topView = [[TopView alloc] initWithFrame:CGRectMake(0, 0, viewWidth, NavigationBar_Height) viewController:self];
     topView.viewName = _viewName;
     [self.view addSubview:topView];
     
@@ -44,7 +43,7 @@
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,
                                                                CGRectGetMaxY(topView.frame) + Adaptive(10),
                                                                viewWidth,
-                                                               viewHeight - 64 - 60)
+                                                               viewHeight - NavigationBar_Height - Adaptive(60))
                                               style:UITableViewStylePlain];
     _tableView.delegate        = self;
     _tableView.dataSource      = self;
@@ -52,9 +51,16 @@
     _tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     _tableView.separatorStyle  = UITableViewCellSeparatorStyleNone;
     _tableView.showsVerticalScrollIndicator = NO;
-    _tableView.backgroundColor = [UIColor colorWithRed:217/255.0 green:223/255.0 blue:231/255.0 alpha:1];
+    _tableView.backgroundColor = BaseGryColor;
     
     [self.view addSubview:_tableView];
+    
+    
+    bottomView        = [[BottomView alloc] init];
+    bottomView.frame  = CGRectMake(0, CGRectGetMaxY(_tableView.frame), viewWidth, viewHeight - CGRectGetMaxY(_tableView.frame));
+    [bottomView.fiveStarButton addTarget:self action:@selector(fiveStarClick:) forControlEvents:UIControlEventTouchUpInside];
+    [bottomView.danmaButton addTarget:self action:@selector(danmaClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:bottomView];
     
     
     
@@ -81,8 +87,6 @@
             break;
     }
     
-    
-    //  [self startRequestAllData];
     // 2.集成刷新控件
     [self setupRefresh];
     
@@ -99,8 +103,33 @@
     
 }
 
-#pragma mark 开始进入刷新状态
+#pragma mark -- 五星 、胆码切换
+- (void)fiveStarClick:(UIButton *)button {
+    
+    [UIView animateWithDuration:.2 animations:^{
+        CGRect sanjiaoFrame   = bottomView.sanjiaoImageView.frame;
+        sanjiaoFrame.origin.x = button.bounds.size.width / 2;
+        bottomView.sanjiaoImageView.frame = sanjiaoFrame;
+        
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [bottomView.danmaButton setTitleColor:BaseGryColor forState:UIControlStateNormal];
+        
+    }];
+}
 
+- (void)danmaClick:(UIButton *)button {
+    [UIView animateWithDuration:.2 animations:^{
+        CGRect sanjiaoFrame   = bottomView.sanjiaoImageView.frame;
+        sanjiaoFrame.origin.x = viewWidth / 2 + button.bounds.size.width / 2;
+        bottomView.sanjiaoImageView.frame = sanjiaoFrame;
+        
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [bottomView.fiveStarButton setTitleColor:BaseGryColor forState:UIControlStateNormal];
+        
+    }];
+}
+
+#pragma mark 开始进入刷新状态
 - (void)startRequestAllData{
     
     /*
@@ -179,7 +208,6 @@
                 [_tableView reloadData];
                 
             }];
-            
         }];
         
         // 结束刷新状态

@@ -1,13 +1,15 @@
 //
 //  AppDelegate.m
 //  SSC
-//
+///Users/a1/Desktop/SSC/SSC
 //  Created by 盛浩 on 16/9/7.
 //  Copyright © 2016年 Hao Sheng. All rights reserved.
 //
 
 #import "AppDelegate.h"
 #import "CSVModel.h"
+#import "JPUSHService.h"   // JPush头文件类
+//static BOOL isProduction = FALSE;
 
 @interface AppDelegate ()
 
@@ -18,9 +20,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-   
+    
+    //可以添加自定义categories
+    [JPUSHService registerForRemoteNotificationTypes:(UIUserNotificationTypeBadge |
+                                                      UIUserNotificationTypeSound |
+                                                      UIUserNotificationTypeAlert)
+                                          categories:nil];
     
     
+    [JPUSHService setupWithOption:launchOptions
+                           appKey:JpushAppKey
+                          channel:@"Publish channel"
+                 apsForProduction:NO
+            advertisingIdentifier:nil];
     
     return YES;
 }
@@ -28,29 +40,44 @@
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-    NSLog(@"11");
-   // [[GKDatabaseManager sharedManager] deleteTableWithTableName:[CSVModel class]];
+
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-     NSLog(@"22");
-   // [[GKDatabaseManager sharedManager] deleteTableWithTableName:[CSVModel class]];
+    
+    // [[GKDatabaseManager sharedManager] deleteTableWithTableName:[CSVModel class]];
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-     NSLog(@"33");
+    
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-     NSLog(@"44");
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    
+    /// Required - 注册 DeviceToken
+    [JPUSHService registerDeviceToken:deviceToken];
+}
+
+
+
+- (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary*)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    
+    [JPUSHService handleRemoteNotification:userInfo];
+    completionHandler(UIBackgroundFetchResultNewData);
+    NSLog(@"complet.userInfo %@",userInfo);
+    
+}
 @end

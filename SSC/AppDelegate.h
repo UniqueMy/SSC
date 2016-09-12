@@ -5,7 +5,7 @@
 //  Created by 盛浩 on 16/9/7.
 //  Copyright © 2016年 Hao Sheng. All rights reserved.
 //
-
+#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
