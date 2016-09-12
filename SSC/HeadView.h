@@ -10,6 +10,6 @@
 
 @interface HeadView : UIView
 
-@property (nonatomic) int successNumber;
+@property (nonatomic) int successNumber,falseNumber;
 
 @end

@@ -24,8 +24,15 @@
 		6301B79B1D8111340002B283 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6301B7931D8111340002B283 /* UIView+MJExtension.m */; };
 		6301B79E1D811F090002B283 /* HttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6301B79D1D811F090002B283 /* HttpTool.m */; };
 		6301B7A11D8121880002B283 /* MainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6301B7A01D8121880002B283 /* MainModel.m */; };
-		63093EA41D81600C00B57C6A /* CSVModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 63093EA21D81600C00B57C6A /* CSVModel.h */; };
-		63093EA51D81600C00B57C6A /* CSVModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63093EA31D81600C00B57C6A /* CSVModel.m */; };
+		632A69701D8695E200FC0F81 /* RequestViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 632A696E1D8695E200FC0F81 /* RequestViewModel.h */; };
+		632A69711D8695E200FC0F81 /* RequestViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 632A696F1D8695E200FC0F81 /* RequestViewModel.m */; };
+		632A69741D8695F100FC0F81 /* RequestModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 632A69721D8695F100FC0F81 /* RequestModel.h */; };
+		632A69751D8695F100FC0F81 /* RequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 632A69731D8695F100FC0F81 /* RequestModel.m */; };
+		632A69781D86997300FC0F81 /* CSVModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 632A69761D86997300FC0F81 /* CSVModel.h */; };
+		632A69791D86997300FC0F81 /* CSVModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 632A69771D86997300FC0F81 /* CSVModel.m */; };
+		632A697B1D8699C100FC0F81 /* 胆码.csv in Resources */ = {isa = PBXBuildFile; fileRef = 632A697A1D8699C100FC0F81 /* 胆码.csv */; };
+		632A697D1D8699DC00FC0F81 /* 五星数据.csv in Resources */ = {isa = PBXBuildFile; fileRef = 632A697C1D8699DC00FC0F81 /* 五星数据.csv */; };
+		632A697F1D869E1500FC0F81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 632A697E1D869E1500FC0F81 /* Main.storyboard */; };
 		63663F991D8634DF00172D6C /* BottomView.h in Headers */ = {isa = PBXBuildFile; fileRef = 63663F971D8634DF00172D6C /* BottomView.h */; };
 		63663F9A1D8634DF00172D6C /* BottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63663F981D8634DF00172D6C /* BottomView.m */; };
 		63663F9C1D86399F00172D6C /* sanjiao.png in Resources */ = {isa = PBXBuildFile; fileRef = 63663F9B1D86399F00172D6C /* sanjiao.png */; };
@@ -46,7 +53,6 @@
 		7AB94FCE1D803C5F00159ADE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB94FCD1D803C5F00159ADE /* main.m */; };
 		7AB94FD11D803C5F00159ADE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB94FD01D803C5F00159ADE /* AppDelegate.m */; };
 		7AB94FD41D803C5F00159ADE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB94FD31D803C5F00159ADE /* ViewController.m */; };
-		7AB94FD71D803C5F00159ADE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AB94FD51D803C5F00159ADE /* Main.storyboard */; };
 		7AB94FD91D803C5F00159ADE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AB94FD81D803C5F00159ADE /* Assets.xcassets */; };
 		7AB94FDC1D803C5F00159ADE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AB94FDA1D803C5F00159ADE /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -88,8 +94,15 @@
 		6301B79F1D8121880002B283 /* MainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainModel.h; sourceTree = "<group>"; };
 		6301B7A01D8121880002B283 /* MainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainModel.m; sourceTree = "<group>"; };
 		63093E951D815E5E00B57C6A /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
-		63093EA21D81600C00B57C6A /* CSVModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVModel.h; sourceTree = "<group>"; };
-		63093EA31D81600C00B57C6A /* CSVModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSVModel.m; sourceTree = "<group>"; };
+		632A696E1D8695E200FC0F81 /* RequestViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestViewModel.h; sourceTree = "<group>"; };
+		632A696F1D8695E200FC0F81 /* RequestViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestViewModel.m; sourceTree = "<group>"; };
+		632A69721D8695F100FC0F81 /* RequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestModel.h; sourceTree = "<group>"; };
+		632A69731D8695F100FC0F81 /* RequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestModel.m; sourceTree = "<group>"; };
+		632A69761D86997300FC0F81 /* CSVModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVModel.h; sourceTree = "<group>"; };
+		632A69771D86997300FC0F81 /* CSVModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSVModel.m; sourceTree = "<group>"; };
+		632A697A1D8699C100FC0F81 /* 胆码.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "胆码.csv"; sourceTree = "<group>"; };
+		632A697C1D8699DC00FC0F81 /* 五星数据.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "五星数据.csv"; sourceTree = "<group>"; };
+		632A697E1D869E1500FC0F81 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		6357C1B41D825BBD00D9DCC3 /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BmobSDK.framework; sourceTree = "<group>"; };
 		6357C1B61D825BEC00D9DCC3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6357C1B81D825BF300D9DCC3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -124,7 +137,6 @@
 		7AB94FD01D803C5F00159ADE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7AB94FD21D803C5F00159ADE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		7AB94FD31D803C5F00159ADE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		7AB94FD61D803C5F00159ADE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7AB94FD81D803C5F00159ADE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AB94FDB1D803C5F00159ADE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7AB94FDD1D803C5F00159ADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -197,8 +209,14 @@
 		636792291D8665230064B924 /* MainModel */ = {
 			isa = PBXGroup;
 			children = (
+				632A69761D86997300FC0F81 /* CSVModel.h */,
+				632A69771D86997300FC0F81 /* CSVModel.m */,
 				6301B79F1D8121880002B283 /* MainModel.h */,
 				6301B7A01D8121880002B283 /* MainModel.m */,
+				632A69721D8695F100FC0F81 /* RequestModel.h */,
+				632A69731D8695F100FC0F81 /* RequestModel.m */,
+				632A696E1D8695E200FC0F81 /* RequestViewModel.h */,
+				632A696F1D8695E200FC0F81 /* RequestViewModel.m */,
 			);
 			name = MainModel;
 			sourceTree = "<group>";
@@ -223,6 +241,8 @@
 		7A7771021D80512300E22BAF /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				632A697A1D8699C100FC0F81 /* 胆码.csv */,
+				632A697C1D8699DC00FC0F81 /* 五星数据.csv */,
 				63663F9B1D86399F00172D6C /* sanjiao.png */,
 				7A7771031D80514D00E22BAF /* TopView.h */,
 				7A7771041D80514D00E22BAF /* TopView.m */,
@@ -267,11 +287,9 @@
 				7AB94FD31D803C5F00159ADE /* ViewController.m */,
 				7A7770FF1D804FCA00E22BAF /* MainViewController.h */,
 				7A7771001D804FCA00E22BAF /* MainViewController.m */,
-				63093EA21D81600C00B57C6A /* CSVModel.h */,
-				63093EA31D81600C00B57C6A /* CSVModel.m */,
 				636792291D8665230064B924 /* MainModel */,
 				7A7771021D80512300E22BAF /* MainView */,
-				7AB94FD51D803C5F00159ADE /* Main.storyboard */,
+				632A697E1D869E1500FC0F81 /* Main.storyboard */,
 				7AB94FD81D803C5F00159ADE /* Assets.xcassets */,
 				7AB94FDA1D803C5F00159ADE /* LaunchScreen.storyboard */,
 				7AB94FDD1D803C5F00159ADE /* Info.plist */,
@@ -313,8 +331,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				63663F991D8634DF00172D6C /* BottomView.h in Headers */,
+				632A69701D8695E200FC0F81 /* RequestViewModel.h in Headers */,
+				632A69741D8695F100FC0F81 /* RequestModel.h in Headers */,
+				632A69781D86997300FC0F81 /* CSVModel.h in Headers */,
 				6367922F1D866B710064B924 /* JPUSHService.h in Headers */,
-				63093EA41D81600C00B57C6A /* CSVModel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,11 +397,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				632A697F1D869E1500FC0F81 /* Main.storyboard in Resources */,
 				7AB94FDC1D803C5F00159ADE /* LaunchScreen.storyboard in Resources */,
 				7AB94FD91D803C5F00159ADE /* Assets.xcassets in Resources */,
 				6301B7941D8111340002B283 /* MJRefresh.bundle in Resources */,
 				63663F9C1D86399F00172D6C /* sanjiao.png in Resources */,
-				7AB94FD71D803C5F00159ADE /* Main.storyboard in Resources */,
+				632A697D1D8699DC00FC0F81 /* 五星数据.csv in Resources */,
+				632A697B1D8699C100FC0F81 /* 胆码.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +416,7 @@
 			files = (
 				6301B7991D8111340002B283 /* UIScrollView+MJExtension.m in Sources */,
 				6301B7971D8111340002B283 /* MJRefreshFooterView.m in Sources */,
+				632A69711D8695E200FC0F81 /* RequestViewModel.m in Sources */,
 				6301B76E1D80FB280002B283 /* TableViewCell.m in Sources */,
 				6301B7981D8111340002B283 /* MJRefreshHeaderView.m in Sources */,
 				6301B77E1D8111280002B283 /* AFNetworkReachabilityManager.m in Sources */,
@@ -413,8 +436,9 @@
 				6301B7821D8111280002B283 /* AFURLSessionManager.m in Sources */,
 				6301B77D1D8111280002B283 /* AFHTTPSessionManager.m in Sources */,
 				6301B7961D8111340002B283 /* MJRefreshConst.m in Sources */,
-				63093EA51D81600C00B57C6A /* CSVModel.m in Sources */,
 				6301B79E1D811F090002B283 /* HttpTool.m in Sources */,
+				632A69751D8695F100FC0F81 /* RequestModel.m in Sources */,
+				632A69791D86997300FC0F81 /* CSVModel.m in Sources */,
 				63663F9A1D8634DF00172D6C /* BottomView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,14 +446,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7AB94FD51D803C5F00159ADE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7AB94FD61D803C5F00159ADE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7AB94FDA1D803C5F00159ADE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

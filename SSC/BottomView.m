@@ -14,12 +14,6 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-      //  self.backgroundColor = [UIColor colorWithRed:94/255.0 green:156/255.0 blue:211/255.0 alpha:1];
-        
-        UILabel *line = [[UILabel alloc] init];
-        line.frame    = CGRectMake(0, 0, viewWidth, Adaptive(.5));
-        line.backgroundColor = [UIColor grayColor];
-        [self addSubview:line];
         
         _sanjiaoImageView = [[UIImageView alloc] init];
         _sanjiaoImageView.frame = CGRectMake(viewWidth / 4, 0, Adaptive(15), Adaptive(10));
@@ -47,7 +41,7 @@
                                            0,
                                            buttonView.bounds.size.width / 2,
                                            buttonView.bounds.size.height);
-        [_danmaButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_danmaButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_danmaButton setTitle:@"胆码" forState:UIControlStateNormal];
         [buttonView addSubview:_danmaButton];
         

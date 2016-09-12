@@ -82,16 +82,13 @@
         
         UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
         pasteboard.string = copyString;
-        
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"复制成功" message:nil preferredStyle:UIAlertControllerStyleAlert];
         [viewController presentViewController:alertController animated:YES completion:^{
             [NSTimer scheduledTimerWithTimeInterval:0.5f target:self selector:@selector(creatAlert:) userInfo:alertController repeats:NO];
             
             
         }];
-        
     });
-    
 }
 
 - (void)creatAlert:(NSTimer *)timer{

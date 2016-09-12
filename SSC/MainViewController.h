@@ -9,16 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "MainModel.h"
 
-
-
 @interface MainViewController : UIViewController
 
-@property (nonatomic,strong) NSString *viewName;
-@property (nonatomic)        NSInteger buttonTag;
+@property (nonatomic,strong) NSString       *viewName;
+//@property (nonatomic,strong) NSString       *trueNumber;
+//@property (nonatomic,strong) NSString       *falseNumber;
+//@property (nonatomic,strong) NSMutableArray *modelArray;
 
-@property (nonatomic,strong) NSString *nowString;
-@property (nonatomic,strong) NSString *yesterdayString;
-
-@property (nonatomic,strong) MainModel *mainModel;
+@property (nonatomic) NSInteger buttonTag;
 
 @end

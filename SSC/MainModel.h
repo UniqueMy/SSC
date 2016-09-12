@@ -11,10 +11,11 @@
 @interface MainModel : NSObject
 
 // 重庆
-@property (nonatomic,strong) NSString *timesNumberString;
-@property (nonatomic,strong) NSString *totalString;
-@property (nonatomic,strong) NSString *publishString;
-@property (nonatomic,strong) NSString *number;
+@property (nonatomic,strong) NSString *timesNumberString; // 期数
+@property (nonatomic,strong) NSString *totalString;       // 和值
+@property (nonatomic,strong) NSString *publishString;     // 开奖结果
+@property (nonatomic)        BOOL      trueOrFalse;       // 中与没中
 
-- (instancetype)initWithArray:(NSArray *)array;
+
+- (instancetype)initWithDict:(NSDictionary *)dict;
 @end

@@ -10,18 +10,23 @@
 #import "CSVModel.h"
 #import "ViewController.h"
 #import "MainViewController.h"
-
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
 {
-    NSArray *nameArray;
-    NSArray *nowArray;
-    NSArray *yesterdayArray;
-    NSString *nowDateString;
-    NSString *yesterdayDateString;
+    NSArray        *nameArray;
+//    NSMutableArray *CQmodelArray;
+//    NSString       *CQtrueNumber;
+//    NSString       *CQfalseNumber;
+//    NSMutableArray *TJmodelArray;
+//    NSString       *TJtrueNumber;
+//    NSString       *TJfalseNumber;
+//    NSMutableArray *XJmodelArray;
+//    NSString       *XJtrueNumber;
+//    NSString       *XJfalseNumber;
+    
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -48,55 +53,48 @@
         [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
     }
+    
+    [self startData];
+    
 }
 
-#pragma mark -- 分线程请求三个数据
-- (void)startRequestData {
-    
-    // 重庆
+
+- (void)startData {
+
     dispatch_queue_t async1 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     
     dispatch_async(async1, ^{
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-        });
+        CSVModel *csv = [CSVModel sharedModelManager];
+        csv.fiveStarArray = [HttpTool readCSVDataWithNSString:@"五星数据"];
         
     });
-    
-    // 天津
-    dispatch_queue_t async2 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(async2, ^{
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-        });
-        
-    });
-    
-    // 新疆
-    dispatch_queue_t async3 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(async3, ^{
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-        });
-        
-    });
-    
-    
 }
 
-
 - (void)buttonClick:(UIButton *)button {
-    
     
     MainViewController *mainVC = [[MainViewController alloc] init];
     mainVC.viewName            = nameArray[button.tag - 1];
     mainVC.buttonTag           = button.tag - 1;
-    mainVC.nowString           = nowDateString;
-    mainVC.yesterdayString     = yesterdayDateString;
-    [self presentViewController:mainVC animated:YES completion:^{}];
+    
+    [UIView animateWithDuration:.2 animations:^{
+        CGRect frame       = button.frame;
+        frame.origin.x    -= 5;
+        frame.origin.y    -= 5;
+        frame.size.width  += 10;
+        frame.size.height += 10;
+        button.frame       = frame;
+    } completion:^(BOOL finished) {
+        CGRect frame       = button.frame;
+        frame.origin.x    += 5;
+        frame.origin.y    += 5;
+        frame.size.width  -= 10;
+        frame.size.height -= 10;
+        button.frame       = frame;
+        
+        [self presentViewController:mainVC animated:YES completion:^{}];
+        
+    }];
 }
 
 @end

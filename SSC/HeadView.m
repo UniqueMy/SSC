@@ -98,7 +98,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
      YLabel.text     = [NSString stringWithFormat:@"Y:%d",_successNumber];
-    NLabel.text     = [NSString stringWithFormat:@"N:%d",240 - _successNumber];
+    NLabel.text     = [NSString stringWithFormat:@"N:%d",_falseNumber];
 }
 
 @end

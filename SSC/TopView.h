@@ -11,6 +11,8 @@
 @interface TopView : UIView
 
 @property (nonatomic,strong) NSString *viewName;
+
 - (instancetype)initWithFrame:(CGRect)frame viewController:(UIViewController *)controller;
+
 
 @end

@@ -5,9 +5,6 @@
 //  Created by 盛浩 on 16/9/7.
 //  Copyright © 2016年 Hao Sheng. All rights reserved.
 //
-
-
-#import "CSVModel.h"
 #import "MainViewController.h"
 #import "TableViewCell.h"
 #import "TopView.h"
@@ -15,6 +12,8 @@
 #import "MainModel.h"
 #import "MJRefresh.h"
 #import "BottomView.h"
+#import "CSVModel.h"
+#import "RequestModel.h"
 @interface MainViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
 
@@ -25,17 +24,23 @@
     NSMutableArray *allDataArray;
     BOOL success;
     int successNumber;
+    int falseNumber;
     NSString *allDataUrl;
     BottomView *bottomView;
+    NSString *city;
+    NSString *types;
     
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
+    types                     = @"star";
     self.view.backgroundColor = BaseGryColor;
     
-    TopView *topView = [[TopView alloc] initWithFrame:CGRectMake(0, 0, viewWidth, NavigationBar_Height) viewController:self];
+    TopView *topView = [[TopView alloc] initWithFrame:CGRectMake(0,
+                                                                 0,
+                                                                 viewWidth,
+                                                                 NavigationBar_Height)
+                                       viewController:self];
     topView.viewName = _viewName;
     [self.view addSubview:topView];
     
@@ -57,35 +62,14 @@
     
     
     bottomView        = [[BottomView alloc] init];
-    bottomView.frame  = CGRectMake(0, CGRectGetMaxY(_tableView.frame), viewWidth, viewHeight - CGRectGetMaxY(_tableView.frame));
+    bottomView.frame  = CGRectMake(0,
+                                   CGRectGetMaxY(_tableView.frame),
+                                   viewWidth,
+                                   viewHeight - CGRectGetMaxY(_tableView.frame));
     [bottomView.fiveStarButton addTarget:self action:@selector(fiveStarClick:) forControlEvents:UIControlEventTouchUpInside];
     [bottomView.danmaButton addTarget:self action:@selector(danmaClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:bottomView];
     
-    
-    
-    
-    switch (_buttonTag) {
-        case 0:
-        {
-            // 重庆
-            allDataUrl = @"http://m.1396mo.com/api/ssc/history?date=";
-        }
-            break;
-        case 1:
-        {
-            // 新疆
-        }
-            break;
-        case 2:
-        {
-            // 天津
-        }
-            break;
-            
-        default:
-            break;
-    }
     
     // 2.集成刷新控件
     [self setupRefresh];
@@ -98,9 +82,7 @@
 {
     // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
     [_tableView addHeaderWithTarget:self action:@selector(startRequestAllData) dateKey:@"table"];
-    
     [_tableView headerBeginRefreshing];
-    
 }
 
 #pragma mark -- 五星 、胆码切换
@@ -112,7 +94,7 @@
         bottomView.sanjiaoImageView.frame = sanjiaoFrame;
         
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [bottomView.danmaButton setTitleColor:BaseGryColor forState:UIControlStateNormal];
+        [bottomView.danmaButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         
     }];
 }
@@ -124,101 +106,64 @@
         bottomView.sanjiaoImageView.frame = sanjiaoFrame;
         
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [bottomView.fiveStarButton setTitleColor:BaseGryColor forState:UIControlStateNormal];
+        [bottomView.fiveStarButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         
     }];
 }
 
 #pragma mark 开始进入刷新状态
-- (void)startRequestAllData{
+- (void)startRequestAllData {
     
-    /*
-     获取今天的日期转换成时间戳 请求到数组
-     获取昨天的日期转换成时间戳 请求到数组
-     数组按时间先后排序组合
-     刷新表
-     
-     */
-    successNumber = 0;
-    CSVModel *csvModel = [CSVModel sharedModelManager];
+    RequestModel *request = [[RequestModel alloc] init];
     
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    
-    allDataArray = [[NSMutableArray alloc] initWithCapacity:240];
-    // 获取当前时间
-    NSString *nowDateString = [NSString stringWithFormat:@"%ld",(long)[[NSDate date] timeIntervalSince1970]];
-    NSString *nowUrl        = [NSString stringWithFormat:@"%@%@",allDataUrl,nowDateString];
-    
-    [HttpTool postWithUrl:nowUrl params:nil body:nil progress:^(NSProgress *progress) {
-        
-    } success:^(id responseObject) {
-        NSArray *nowArray = [responseObject objectForKey:@"itemArray"];
-        
-        for (NSArray *array in nowArray) {
-            MainModel *mainModel = [[MainModel alloc] initWithArray:array];
+   
+    switch (_buttonTag) {
+        case 0:
+        {
+            // 重庆
+            city = @"chongqing";
             
-            if ([csvModel.fiveStarArray containsObject:mainModel.publishString]) {
-                
-                successNumber ++;
-            }
-            
-            [allDataArray addObject:mainModel];
         }
+            break;
+        case 1:
+        {
+            // 天津
+            city = @"tianjin";
+        }
+            break;
+        case 2:
+        {
+            // 新疆
+            city = @"xinjiang";
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+    NSString *url = [NSString stringWithFormat:@"http://www.antson.cn:8080/stars/?city=%@&type=%@",city,types];
+    NSLog(@"url %@",url);
+    
+    
+    [request setReturnBlock:^(id returnValue,NSDictionary *dict) {
+        
+        allDataArray  = (NSMutableArray *)returnValue;
+        successNumber = [[dict objectForKey:@"yes"] intValue];
+        falseNumber   = [[dict objectForKey:@"no"] intValue];
         [_tableView reloadData];
-        
-        // 获取昨天时间
-        
-        NSString *yesterdayDateString = [NSString stringWithFormat:@"%ld",(long)[[NSDate dateWithTimeIntervalSinceNow:-60*60*24] timeIntervalSince1970]];
-        NSString *yesterdayUrl        = [NSString stringWithFormat:@"%@%@",allDataUrl,yesterdayDateString];
-        
-        [HttpTool postWithUrl:yesterdayUrl params:nil body:nil progress:^(NSProgress *progress) {
-            
-        } success:^(id responseObject) {
-            
-            NSArray *yesterdayArray = [responseObject objectForKey:@"itemArray"];
-            for (NSArray *array in yesterdayArray) {
-                MainModel *mainModel = [[MainModel alloc] initWithArray:array];
-                if ([csvModel.fiveStarArray containsObject:mainModel.publishString]) {
-                    successNumber ++;
-                }
-                [allDataArray addObject:mainModel];
-            }
-            
-            [_tableView reloadData];
-            
-            
-            // 获取前天时间
-            NSString *beforeyesterdayString = [NSString stringWithFormat:@"%ld",(long)[[NSDate dateWithTimeIntervalSinceNow:-60*60*48] timeIntervalSince1970]];
-            NSString *beforeyesterdayUrl        = [NSString stringWithFormat:@"%@%@",allDataUrl,beforeyesterdayString];
-            
-            [HttpTool postWithUrl:beforeyesterdayUrl params:nil body:nil progress:^(NSProgress *progress) {
-                
-            } success:^(id responseObject) {
-                
-                NSArray *beforeyesterdayArray = [responseObject objectForKey:@"itemArray"];
-                for (NSArray *array in beforeyesterdayArray) {
-                    MainModel *mainModel = [[MainModel alloc] initWithArray:array];
-                    if ([csvModel.fiveStarArray containsObject:mainModel.publishString]) {
-                        
-                        successNumber ++;
-                    }
-                    [allDataArray addObject:mainModel];
-                }
-                [_tableView reloadData];
-                
-            }];
-        }];
-        
         // 结束刷新状态
         [_tableView headerEndRefreshing];
     }];
+    
+    
+    [request startRequestDataWithCQSSCWithUrl:url];
 }
-
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     HeadView *headView     = [[HeadView alloc] init];
     headView.successNumber = successNumber;
+    headView.falseNumber   = falseNumber;
     return headView;
     
 }
@@ -227,14 +172,7 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    NSInteger integer;
-    if (allDataArray.count < 240) {
-        integer = allDataArray.count;
-    } else {
-        integer = 240;
-    }
-    
-    return integer;
+    return allDataArray.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *identifier = @"Cell";

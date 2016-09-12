@@ -7,11 +7,10 @@
 //
 #import "MainModel.h"
 #import "TableViewCell.h"
-#import "CSVModel.h"
-#import <BmobSDK/Bmob.h>
+
+
 @implementation TableViewCell
 {
-    CSVModel *csvModel;
     BOOL      success;
    
 }
@@ -19,7 +18,6 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        csvModel = [CSVModel sharedModelManager];
        
         // 把自定义的控件 变成了单元格的属性
         self.backgroundColor = [UIColor colorWithRed:217/255.0 green:223/255.0 blue:231/255.0 alpha:1];
@@ -92,27 +90,6 @@
     _publishLabel.text      = mainModel.publishString;
     _totalLabel.text        = mainModel.totalString;
     
-    
-    
-    
-    dispatch_queue_t async1 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    
-    dispatch_async(async1, ^{
-        
-        success = [csvModel.fiveStarArray containsObject:mainModel.publishString] ? YES : NO;
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            
-            if (success == YES) {
-                _YNLabel.backgroundColor = [UIColor colorWithRed:0 green:177/255.0 blue:88/255.0 alpha:1];
-                _YNLabel.text            = @"Y";
-            } else {
-                _YNLabel.backgroundColor = [UIColor colorWithRed:217/255.0 green:223/255.0 blue:231/255.0 alpha:1];
-                _YNLabel.text            = @"N";
-            }
-        });
-    });
-}
+    }
 
 @end
