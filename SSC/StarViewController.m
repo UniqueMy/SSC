@@ -61,7 +61,7 @@
 #pragma mark 开始进入刷新状态
 - (void)startRequestAllData {
     
-    NSLog(@"_button.tag %ld",(long)_buttonTag);
+  //  NSLog(@"_button.tag %ld",(long)_buttonTag);
     
     RequestModel *request = [[RequestModel alloc] init];
     

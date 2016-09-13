@@ -34,7 +34,7 @@
                                               style:UITableViewStylePlain];
     _tableView.delegate        = self;
     _tableView.dataSource      = self;
-    _tableView.rowHeight       = Adaptive(60);
+    _tableView.rowHeight       = Adaptive(30);
     _tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     _tableView.separatorStyle  = UITableViewCellSeparatorStyleNone;
     _tableView.showsVerticalScrollIndicator = NO;
@@ -53,6 +53,7 @@
 {
     // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
     [_tableView addHeaderWithTarget:self action:@selector(startRequestAllData) dateKey:@"table"];
+
     [_tableView headerBeginRefreshing];
 }
 
@@ -121,7 +122,7 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    NSLog(@"数组长度 %lu",(unsigned long)allDataArray.count);
+   // NSLog(@"数组长度 %lu",(unsigned long)allDataArray.count);
     
     return allDataArray.count;
 }
