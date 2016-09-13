@@ -10,14 +10,14 @@
 
 @implementation HeadView
 {
-    UILabel *YLabel;
-    UILabel *NLabel;
+   
 }
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor colorWithRed:217/255.0 green:223/255.0 blue:231/255.0 alpha:1];
+        self.backgroundColor = BaseGryColor;
+
         [self createMainView];
     }
     return self;
@@ -62,29 +62,28 @@
     [self addSubview:totalLabel];
     
     
-    YLabel = [[UILabel alloc] init];
-    YLabel.frame    = CGRectMake(CGRectGetMaxX(totalLabel.frame), Adaptive(1), labelWidth, Adaptive(28.5));
-   
-    YLabel.textAlignment = 1;
-    YLabel.textColor = [UIColor blackColor];
-    YLabel.backgroundColor = [UIColor colorWithRed:0 green:177/255.0 blue:88/255.0 alpha:1];
-    YLabel.font      = [UIFont systemFontOfSize:Adaptive(14)];
-    [self addSubview:YLabel];
+    _YLabel = [[UILabel alloc] init];
+    _YLabel.frame    = CGRectMake(CGRectGetMaxX(totalLabel.frame), Adaptive(1), labelWidth, Adaptive(28.5));
+//YLabel.text = @"hahaha";
+    _YLabel.textAlignment = 1;
+    _YLabel.textColor = [UIColor blackColor];
+    _YLabel.backgroundColor = [UIColor colorWithRed:0 green:177/255.0 blue:88/255.0 alpha:1];
+    _YLabel.font      = [UIFont systemFontOfSize:Adaptive(14)];
+    [self addSubview:_YLabel];
     
     
     
     
-    NLabel = [[UILabel alloc] init];
-    NLabel.frame    = CGRectMake(CGRectGetMaxX(totalLabel.frame),CGRectGetMaxY(YLabel.frame) + Adaptive(1), labelWidth, Adaptive(28.5));
+    _NLabel = [[UILabel alloc] init];
+    _NLabel.frame    = CGRectMake(CGRectGetMaxX(totalLabel.frame),CGRectGetMaxY(_YLabel.frame) + Adaptive(1), labelWidth, Adaptive(28.5));
     
-    NLabel.textAlignment = 1;
-    NLabel.textColor = [UIColor blackColor];
-    NLabel.font      = [UIFont systemFontOfSize:Adaptive(14)];
-    [self addSubview:NLabel];
+    _NLabel.textAlignment = 1;
+    _NLabel.textColor = [UIColor blackColor];
+    _NLabel.font      = [UIFont systemFontOfSize:Adaptive(14)];
+    [self addSubview:_NLabel];
     
     
     
-//    NSArray *textArray = @[@"开奖号码",@"和值",@"Y(120)/N(120)"];
 //    
     for (int a = 0; a < 3; a++) {
         UILabel *line = [[UILabel alloc] init];
@@ -93,12 +92,11 @@
         [self addSubview:line];
     }
     
+   
+    
     
 }
-- (void)layoutSubviews {
-    [super layoutSubviews];
-     YLabel.text     = [NSString stringWithFormat:@"Y:%d",_successNumber];
-    NLabel.text     = [NSString stringWithFormat:@"N:%d",_falseNumber];
-}
+
+
 
 @end

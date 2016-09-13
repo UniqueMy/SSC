@@ -33,6 +33,22 @@
 		632A697B1D8699C100FC0F81 /* 胆码.csv in Resources */ = {isa = PBXBuildFile; fileRef = 632A697A1D8699C100FC0F81 /* 胆码.csv */; };
 		632A697D1D8699DC00FC0F81 /* 五星数据.csv in Resources */ = {isa = PBXBuildFile; fileRef = 632A697C1D8699DC00FC0F81 /* 五星数据.csv */; };
 		632A697F1D869E1500FC0F81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 632A697E1D869E1500FC0F81 /* Main.storyboard */; };
+		634573611D878F2300C48B3A /* MoveViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6345735F1D878F2300C48B3A /* MoveViewController.h */; };
+		634573621D878F2300C48B3A /* MoveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634573601D878F2300C48B3A /* MoveViewController.m */; };
+		634573651D878F3D00C48B3A /* DanMaViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 634573631D878F3D00C48B3A /* DanMaViewController.h */; };
+		634573661D878F3D00C48B3A /* DanMaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634573641D878F3D00C48B3A /* DanMaViewController.m */; };
+		634573691D87949800C48B3A /* StarViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 634573671D87949800C48B3A /* StarViewController.h */; };
+		6345736A1D87949800C48B3A /* StarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634573681D87949800C48B3A /* StarViewController.m */; };
+		6345736D1D879FAA00C48B3A /* DanmaViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 6345736B1D879FAA00C48B3A /* DanmaViewModel.h */; };
+		6345736E1D879FAA00C48B3A /* DanmaViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6345736C1D879FAA00C48B3A /* DanmaViewModel.m */; };
+		634573721D87A05900C48B3A /* DanmaPublicModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 634573701D87A05900C48B3A /* DanmaPublicModel.h */; };
+		634573731D87A05900C48B3A /* DanmaPublicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 634573711D87A05900C48B3A /* DanmaPublicModel.m */; };
+		634573761D87A07500C48B3A /* DanmaModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 634573741D87A07500C48B3A /* DanmaModel.h */; };
+		634573771D87A07500C48B3A /* DanmaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 634573751D87A07500C48B3A /* DanmaModel.m */; };
+		6345737F1D87A60B00C48B3A /* DMHeadView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6345737D1D87A60B00C48B3A /* DMHeadView.h */; };
+		634573801D87A60B00C48B3A /* DMHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6345737E1D87A60B00C48B3A /* DMHeadView.m */; };
+		634573831D87A65000C48B3A /* DMTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 634573811D87A65000C48B3A /* DMTableViewCell.h */; };
+		634573841D87A65000C48B3A /* DMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 634573821D87A65000C48B3A /* DMTableViewCell.m */; };
 		63663F991D8634DF00172D6C /* BottomView.h in Headers */ = {isa = PBXBuildFile; fileRef = 63663F971D8634DF00172D6C /* BottomView.h */; };
 		63663F9A1D8634DF00172D6C /* BottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63663F981D8634DF00172D6C /* BottomView.m */; };
 		63663F9C1D86399F00172D6C /* sanjiao.png in Resources */ = {isa = PBXBuildFile; fileRef = 63663F9B1D86399F00172D6C /* sanjiao.png */; };
@@ -47,7 +63,6 @@
 		636792391D866C480064B924 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636792381D866C480064B924 /* UIKit.framework */; };
 		6367923A1D866C500064B924 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6357C1B81D825BF300D9DCC3 /* Security.framework */; };
 		6367923C1D86707C0064B924 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6367923B1D86707C0064B924 /* libz.tbd */; };
-		7A7771011D804FCA00E22BAF /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7771001D804FCA00E22BAF /* MainViewController.m */; };
 		7A7771051D80514D00E22BAF /* TopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7771041D80514D00E22BAF /* TopView.m */; };
 		7A7771091D805ABF00E22BAF /* HeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7771081D805ABF00E22BAF /* HeadView.m */; };
 		7AB94FCE1D803C5F00159ADE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB94FCD1D803C5F00159ADE /* main.m */; };
@@ -103,6 +118,22 @@
 		632A697A1D8699C100FC0F81 /* 胆码.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "胆码.csv"; sourceTree = "<group>"; };
 		632A697C1D8699DC00FC0F81 /* 五星数据.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "五星数据.csv"; sourceTree = "<group>"; };
 		632A697E1D869E1500FC0F81 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		6345735F1D878F2300C48B3A /* MoveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveViewController.h; sourceTree = "<group>"; };
+		634573601D878F2300C48B3A /* MoveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveViewController.m; sourceTree = "<group>"; };
+		634573631D878F3D00C48B3A /* DanMaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanMaViewController.h; sourceTree = "<group>"; };
+		634573641D878F3D00C48B3A /* DanMaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanMaViewController.m; sourceTree = "<group>"; };
+		634573671D87949800C48B3A /* StarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarViewController.h; sourceTree = "<group>"; };
+		634573681D87949800C48B3A /* StarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarViewController.m; sourceTree = "<group>"; };
+		6345736B1D879FAA00C48B3A /* DanmaViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmaViewModel.h; sourceTree = "<group>"; };
+		6345736C1D879FAA00C48B3A /* DanmaViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmaViewModel.m; sourceTree = "<group>"; };
+		634573701D87A05900C48B3A /* DanmaPublicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmaPublicModel.h; sourceTree = "<group>"; };
+		634573711D87A05900C48B3A /* DanmaPublicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmaPublicModel.m; sourceTree = "<group>"; };
+		634573741D87A07500C48B3A /* DanmaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmaModel.h; sourceTree = "<group>"; };
+		634573751D87A07500C48B3A /* DanmaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmaModel.m; sourceTree = "<group>"; };
+		6345737D1D87A60B00C48B3A /* DMHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMHeadView.h; sourceTree = "<group>"; };
+		6345737E1D87A60B00C48B3A /* DMHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMHeadView.m; sourceTree = "<group>"; };
+		634573811D87A65000C48B3A /* DMTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTableViewCell.h; sourceTree = "<group>"; };
+		634573821D87A65000C48B3A /* DMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMTableViewCell.m; sourceTree = "<group>"; };
 		6357C1B41D825BBD00D9DCC3 /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BmobSDK.framework; sourceTree = "<group>"; };
 		6357C1B61D825BEC00D9DCC3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6357C1B81D825BF300D9DCC3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -124,8 +155,6 @@
 		636792381D866C480064B924 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6367923B1D86707C0064B924 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		6367923D1D8679EA0064B924 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		7A7770FF1D804FCA00E22BAF /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		7A7771001D804FCA00E22BAF /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		7A7771031D80514D00E22BAF /* TopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopView.h; sourceTree = "<group>"; };
 		7A7771041D80514D00E22BAF /* TopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopView.m; sourceTree = "<group>"; };
 		7A7771061D8051CE00E22BAF /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = ../PrefixHeader.pch; sourceTree = "<group>"; };
@@ -204,6 +233,30 @@
 				6301B7931D8111340002B283 /* UIView+MJExtension.m */,
 			);
 			path = MJRefresh;
+			sourceTree = "<group>";
+		};
+		6345736F1D87A04100C48B3A /* DanmaModel */ = {
+			isa = PBXGroup;
+			children = (
+				634573741D87A07500C48B3A /* DanmaModel.h */,
+				634573751D87A07500C48B3A /* DanmaModel.m */,
+				6345736B1D879FAA00C48B3A /* DanmaViewModel.h */,
+				6345736C1D879FAA00C48B3A /* DanmaViewModel.m */,
+				634573701D87A05900C48B3A /* DanmaPublicModel.h */,
+				634573711D87A05900C48B3A /* DanmaPublicModel.m */,
+			);
+			name = DanmaModel;
+			sourceTree = "<group>";
+		};
+		634573781D87A58C00C48B3A /* DanMaView */ = {
+			isa = PBXGroup;
+			children = (
+				6345737D1D87A60B00C48B3A /* DMHeadView.h */,
+				6345737E1D87A60B00C48B3A /* DMHeadView.m */,
+				634573811D87A65000C48B3A /* DMTableViewCell.h */,
+				634573821D87A65000C48B3A /* DMTableViewCell.m */,
+			);
+			name = DanMaView;
 			sourceTree = "<group>";
 		};
 		636792291D8665230064B924 /* MainModel */ = {
@@ -285,8 +338,14 @@
 				7A7771061D8051CE00E22BAF /* PrefixHeader.pch */,
 				7AB94FD21D803C5F00159ADE /* ViewController.h */,
 				7AB94FD31D803C5F00159ADE /* ViewController.m */,
-				7A7770FF1D804FCA00E22BAF /* MainViewController.h */,
-				7A7771001D804FCA00E22BAF /* MainViewController.m */,
+				6345735F1D878F2300C48B3A /* MoveViewController.h */,
+				634573601D878F2300C48B3A /* MoveViewController.m */,
+				634573671D87949800C48B3A /* StarViewController.h */,
+				634573681D87949800C48B3A /* StarViewController.m */,
+				634573631D878F3D00C48B3A /* DanMaViewController.h */,
+				634573641D878F3D00C48B3A /* DanMaViewController.m */,
+				634573781D87A58C00C48B3A /* DanMaView */,
+				6345736F1D87A04100C48B3A /* DanmaModel */,
 				636792291D8665230064B924 /* MainModel */,
 				7A7771021D80512300E22BAF /* MainView */,
 				632A697E1D869E1500FC0F81 /* Main.storyboard */,
@@ -331,9 +390,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				63663F991D8634DF00172D6C /* BottomView.h in Headers */,
+				634573651D878F3D00C48B3A /* DanMaViewController.h in Headers */,
 				632A69701D8695E200FC0F81 /* RequestViewModel.h in Headers */,
+				634573721D87A05900C48B3A /* DanmaPublicModel.h in Headers */,
+				6345737F1D87A60B00C48B3A /* DMHeadView.h in Headers */,
+				634573691D87949800C48B3A /* StarViewController.h in Headers */,
+				6345736D1D879FAA00C48B3A /* DanmaViewModel.h in Headers */,
+				634573611D878F2300C48B3A /* MoveViewController.h in Headers */,
+				634573761D87A07500C48B3A /* DanmaModel.h in Headers */,
 				632A69741D8695F100FC0F81 /* RequestModel.h in Headers */,
 				632A69781D86997300FC0F81 /* CSVModel.h in Headers */,
+				634573831D87A65000C48B3A /* DMTableViewCell.h in Headers */,
 				6367922F1D866B710064B924 /* JPUSHService.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +485,8 @@
 				6301B7971D8111340002B283 /* MJRefreshFooterView.m in Sources */,
 				632A69711D8695E200FC0F81 /* RequestViewModel.m in Sources */,
 				6301B76E1D80FB280002B283 /* TableViewCell.m in Sources */,
+				634573661D878F3D00C48B3A /* DanMaViewController.m in Sources */,
+				634573801D87A60B00C48B3A /* DMHeadView.m in Sources */,
 				6301B7981D8111340002B283 /* MJRefreshHeaderView.m in Sources */,
 				6301B77E1D8111280002B283 /* AFNetworkReachabilityManager.m in Sources */,
 				7AB94FD41D803C5F00159ADE /* ViewController.m in Sources */,
@@ -425,16 +494,21 @@
 				7A7771091D805ABF00E22BAF /* HeadView.m in Sources */,
 				7AB94FD11D803C5F00159ADE /* AppDelegate.m in Sources */,
 				6301B77F1D8111280002B283 /* AFSecurityPolicy.m in Sources */,
+				6345736E1D879FAA00C48B3A /* DanmaViewModel.m in Sources */,
 				6301B79A1D8111340002B283 /* UIScrollView+MJRefresh.m in Sources */,
 				6301B79B1D8111340002B283 /* UIView+MJExtension.m in Sources */,
 				6301B7801D8111280002B283 /* AFURLRequestSerialization.m in Sources */,
 				7AB94FCE1D803C5F00159ADE /* main.m in Sources */,
+				634573621D878F2300C48B3A /* MoveViewController.m in Sources */,
+				634573731D87A05900C48B3A /* DanmaPublicModel.m in Sources */,
 				6301B7A11D8121880002B283 /* MainModel.m in Sources */,
-				7A7771011D804FCA00E22BAF /* MainViewController.m in Sources */,
+				6345736A1D87949800C48B3A /* StarViewController.m in Sources */,
+				634573771D87A07500C48B3A /* DanmaModel.m in Sources */,
 				6301B7951D8111340002B283 /* MJRefreshBaseView.m in Sources */,
 				6301B7811D8111280002B283 /* AFURLResponseSerialization.m in Sources */,
 				6301B7821D8111280002B283 /* AFURLSessionManager.m in Sources */,
 				6301B77D1D8111280002B283 /* AFHTTPSessionManager.m in Sources */,
+				634573841D87A65000C48B3A /* DMTableViewCell.m in Sources */,
 				6301B7961D8111340002B283 /* MJRefreshConst.m in Sources */,
 				6301B79E1D811F090002B283 /* HttpTool.m in Sources */,
 				632A69751D8695F100FC0F81 /* RequestModel.m in Sources */,

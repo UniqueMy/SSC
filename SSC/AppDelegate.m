@@ -79,5 +79,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     completionHandler(UIBackgroundFetchResultNewData);
     NSLog(@"complet.userInfo %@",userInfo);
     
+    
+    
 }
 @end

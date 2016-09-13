@@ -9,7 +9,7 @@
 
 #import "CSVModel.h"
 #import "ViewController.h"
-#import "MainViewController.h"
+#import "MoveViewController.h"
 @interface ViewController ()
 
 @end
@@ -73,7 +73,7 @@
 
 - (void)buttonClick:(UIButton *)button {
     
-    MainViewController *mainVC = [[MainViewController alloc] init];
+    MoveViewController *mainVC = [[MoveViewController alloc] init];
     mainVC.viewName            = nameArray[button.tag - 1];
     mainVC.buttonTag           = button.tag - 1;
     

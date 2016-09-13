@@ -20,7 +20,7 @@
     if (self) {
        
         // 把自定义的控件 变成了单元格的属性
-        self.backgroundColor = [UIColor colorWithRed:217/255.0 green:223/255.0 blue:231/255.0 alpha:1];
+        self.backgroundColor = BaseGryColor;
         
         UILabel *bottomLine = [[UILabel alloc] init];
         bottomLine.frame    = CGRectMake(0, Adaptive(29), viewWidth, Adaptive(1));
@@ -70,15 +70,6 @@
         _YNLabel.font      = [UIFont systemFontOfSize:Adaptive(13)];
         [self addSubview:_YNLabel];
         
-        
-        _numberLabel = [[UILabel alloc] init];
-        _numberLabel.frame    = CGRectMake(CGRectGetMaxX(_YNLabel.frame), 0, labelWidth, Adaptive(30));
-        _numberLabel.text     = @"240";
-        _numberLabel.textAlignment = 1;
-        _numberLabel.textColor = [UIColor blackColor];
-        _numberLabel.font      = [UIFont systemFontOfSize:Adaptive(13)];
-        [self addSubview:_numberLabel];
-        
     }
     return self;
 }
@@ -89,6 +80,18 @@
     _timesNumberLabel.text  = mainModel.timesNumberString;
     _publishLabel.text      = mainModel.publishString;
     _totalLabel.text        = mainModel.totalString;
+    
+    if (mainModel.trueOrFalse == YES) {
+        
+        _YNLabel.text     = @"Y";
+        _YNLabel.backgroundColor = BaseGreenColor;
+        
+    } else {
+        _YNLabel.text     = @"N";
+        _YNLabel.backgroundColor = BaseGryColor;
+    }
+    
+    
     
     }
 

@@ -11,5 +11,6 @@
 @interface HeadView : UIView
 
 @property (nonatomic) int successNumber,falseNumber;
+@property (nonatomic,strong) UILabel *YLabel,*NLabel;
 
 @end

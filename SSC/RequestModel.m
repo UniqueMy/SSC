@@ -18,8 +18,6 @@
         
     } success:^(id responseObject) {
         
-       // NSLog(@"responseObject %@",responseObject);
-        
         [self startResolveDataWithDictionary:responseObject];
         
     }];
@@ -31,8 +29,8 @@
     
     NSArray *dataArray          = [dict objectForKey:@"result"];
     NSMutableArray *returnArray = [NSMutableArray array];
-    NSDictionary *returnDict    = @{@"turn":[dict objectForKey:@"yes"],
-                                    @"false":[dict objectForKey:@"no"]};
+    NSDictionary *returnDict    = @{@"yes":[dict objectForKey:@"yes"],
+                                    @"no":[dict objectForKey:@"no"]};
     
     
     for (NSDictionary *dict in dataArray) {
@@ -40,7 +38,8 @@
         [returnArray addObject:mainModel];
     }
     
-    self.returnBlock(returnArray,returnDict);
+    self.ReturnValueDict(returnDict);
+    self.returnBlock(returnArray);
     
 }
 
