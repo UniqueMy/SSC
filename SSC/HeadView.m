@@ -16,7 +16,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = BaseGryColor;
+        self.backgroundColor = [UIColor grayColor];
 
         [self createMainView];
     }
@@ -27,12 +27,12 @@
     
     UILabel *topLine = [[UILabel alloc] init];
     topLine.frame    = CGRectMake(0, 0, viewWidth, Adaptive(1));
-    topLine.backgroundColor = [UIColor grayColor];
+    topLine.backgroundColor = [UIColor blackColor];
     [self addSubview:topLine];
     
     UILabel *bottomLine = [[UILabel alloc] init];
     bottomLine.frame    = CGRectMake(0, Adaptive(59), viewWidth, Adaptive(1));
-    bottomLine.backgroundColor = [UIColor grayColor];
+    bottomLine.backgroundColor = [UIColor blackColor];
     [self addSubview:bottomLine];
     
     CGFloat labelWidth = viewWidth / 4;
@@ -73,6 +73,14 @@
     
     
     
+    UILabel *YNLine = [[UILabel alloc] init];
+    YNLine.frame    = CGRectMake(CGRectGetMaxX(totalLabel.frame),
+                                  CGRectGetMaxY(_YLabel.frame),
+                                  labelWidth,
+                                  Adaptive(.5));
+    YNLine.backgroundColor = [UIColor blackColor];
+    [self addSubview:YNLine];
+
     
     _NLabel = [[UILabel alloc] init];
     _NLabel.frame    = CGRectMake(CGRectGetMaxX(totalLabel.frame),CGRectGetMaxY(_YLabel.frame) + Adaptive(1), labelWidth, Adaptive(28.5));
@@ -88,7 +96,7 @@
     for (int a = 0; a < 3; a++) {
         UILabel *line = [[UILabel alloc] init];
         line.frame    = CGRectMake(labelWidth *(a + 1), 0, Adaptive(1), Adaptive(60));
-        line.backgroundColor = [UIColor grayColor];
+        line.backgroundColor = [UIColor blackColor];
         [self addSubview:line];
     }
     
