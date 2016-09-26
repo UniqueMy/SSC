@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "CSVModel.h"
-#import "JPUSHService.h"   // JPush头文件类
 //static BOOL isProduction = FALSE;
 
 @interface AppDelegate ()
@@ -20,19 +19,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    
-    //可以添加自定义categories
-    [JPUSHService registerForRemoteNotificationTypes:(UIUserNotificationTypeBadge |
-                                                      UIUserNotificationTypeSound |
-                                                      UIUserNotificationTypeAlert)
-                                          categories:nil];
-    
-    
-    [JPUSHService setupWithOption:launchOptions
-                           appKey:JpushAppKey
-                          channel:@"Publish channel"
-                 apsForProduction:NO
-            advertisingIdentifier:nil];
     
     return YES;
 }
@@ -67,18 +53,11 @@
 - (void)application:(UIApplication *)application
 didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
-    /// Required - 注册 DeviceToken
-    [JPUSHService registerDeviceToken:deviceToken];
 }
 
 
 
 - (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary*)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-    
-    [JPUSHService handleRemoteNotification:userInfo];
-    completionHandler(UIBackgroundFetchResultNewData);
-    NSLog(@"complet.userInfo %@",userInfo);
-    
     
     
 }

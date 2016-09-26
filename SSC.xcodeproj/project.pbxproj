@@ -49,20 +49,22 @@
 		634573801D87A60B00C48B3A /* DMHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6345737E1D87A60B00C48B3A /* DMHeadView.m */; };
 		634573831D87A65000C48B3A /* DMTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 634573811D87A65000C48B3A /* DMTableViewCell.h */; };
 		634573841D87A65000C48B3A /* DMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 634573821D87A65000C48B3A /* DMTableViewCell.m */; };
+		635F25D41D98F5310022177C /* ThreeStarViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 635F25D21D98F5310022177C /* ThreeStarViewController.h */; };
+		635F25D51D98F5310022177C /* ThreeStarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635F25D31D98F5310022177C /* ThreeStarViewController.m */; };
+		635F25DA1D98FBD20022177C /* ThreeHeadView.h in Headers */ = {isa = PBXBuildFile; fileRef = 635F25D81D98FBD20022177C /* ThreeHeadView.h */; };
+		635F25DB1D98FBD20022177C /* ThreeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 635F25D91D98FBD20022177C /* ThreeHeadView.m */; };
+		635F25DE1D98FCC20022177C /* ThreePublicModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 635F25DC1D98FCC20022177C /* ThreePublicModel.h */; };
+		635F25DF1D98FCC20022177C /* ThreePublicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 635F25DD1D98FCC20022177C /* ThreePublicModel.m */; };
+		635F25E21D98FCDB0022177C /* ThreeViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 635F25E01D98FCDB0022177C /* ThreeViewModel.h */; };
+		635F25E31D98FCDB0022177C /* ThreeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 635F25E11D98FCDB0022177C /* ThreeViewModel.m */; };
+		635F25E61D98FCF00022177C /* ThreeModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 635F25E41D98FCF00022177C /* ThreeModel.h */; };
+		635F25E71D98FCF00022177C /* ThreeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 635F25E51D98FCF00022177C /* ThreeModel.m */; };
+		635F25EA1D98FF670022177C /* ThreeTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 635F25E81D98FF670022177C /* ThreeTableViewCell.h */; };
+		635F25EB1D98FF670022177C /* ThreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 635F25E91D98FF670022177C /* ThreeTableViewCell.m */; };
+		635F25ED1D9908580022177C /* 三星.csv in Resources */ = {isa = PBXBuildFile; fileRef = 635F25EC1D9908580022177C /* 三星.csv */; };
 		63663F991D8634DF00172D6C /* BottomView.h in Headers */ = {isa = PBXBuildFile; fileRef = 63663F971D8634DF00172D6C /* BottomView.h */; };
 		63663F9A1D8634DF00172D6C /* BottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63663F981D8634DF00172D6C /* BottomView.m */; };
 		63663F9C1D86399F00172D6C /* sanjiao.png in Resources */ = {isa = PBXBuildFile; fileRef = 63663F9B1D86399F00172D6C /* sanjiao.png */; };
-		6367922E1D866B710064B924 /* jpush-ios-2.1.9.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6367922C1D866B710064B924 /* jpush-ios-2.1.9.a */; };
-		6367922F1D866B710064B924 /* JPUSHService.h in Headers */ = {isa = PBXBuildFile; fileRef = 6367922D1D866B710064B924 /* JPUSHService.h */; };
-		636792301D866BF30064B924 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6357C1BE1D825C1100D9DCC3 /* CFNetwork.framework */; };
-		636792321D866C100064B924 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636792311D866C100064B924 /* CoreFoundation.framework */; };
-		636792331D866C1F0064B924 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6357C1C01D825C1900D9DCC3 /* CoreTelephony.framework */; };
-		636792341D866C290064B924 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6357C1C21D825C2200D9DCC3 /* SystemConfiguration.framework */; };
-		636792351D866C310064B924 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6357C1BA1D825BFA00D9DCC3 /* CoreGraphics.framework */; };
-		636792371D866C390064B924 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636792361D866C390064B924 /* Foundation.framework */; };
-		636792391D866C480064B924 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636792381D866C480064B924 /* UIKit.framework */; };
-		6367923A1D866C500064B924 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6357C1B81D825BF300D9DCC3 /* Security.framework */; };
-		6367923C1D86707C0064B924 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6367923B1D86707C0064B924 /* libz.tbd */; };
 		7A7771051D80514D00E22BAF /* TopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7771041D80514D00E22BAF /* TopView.m */; };
 		7A7771091D805ABF00E22BAF /* HeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7771081D805ABF00E22BAF /* HeadView.m */; };
 		7AB94FCE1D803C5F00159ADE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB94FCD1D803C5F00159ADE /* main.m */; };
@@ -145,11 +147,22 @@
 		6357C1C41D825C2900D9DCC3 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		6357C1C61D825C3600D9DCC3 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		6357C1C81D825C4100D9DCC3 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		635F25D21D98F5310022177C /* ThreeStarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeStarViewController.h; sourceTree = "<group>"; };
+		635F25D31D98F5310022177C /* ThreeStarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreeStarViewController.m; sourceTree = "<group>"; };
+		635F25D81D98FBD20022177C /* ThreeHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeHeadView.h; sourceTree = "<group>"; };
+		635F25D91D98FBD20022177C /* ThreeHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreeHeadView.m; sourceTree = "<group>"; };
+		635F25DC1D98FCC20022177C /* ThreePublicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreePublicModel.h; sourceTree = "<group>"; };
+		635F25DD1D98FCC20022177C /* ThreePublicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreePublicModel.m; sourceTree = "<group>"; };
+		635F25E01D98FCDB0022177C /* ThreeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeViewModel.h; sourceTree = "<group>"; };
+		635F25E11D98FCDB0022177C /* ThreeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreeViewModel.m; sourceTree = "<group>"; };
+		635F25E41D98FCF00022177C /* ThreeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeModel.h; sourceTree = "<group>"; };
+		635F25E51D98FCF00022177C /* ThreeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreeModel.m; sourceTree = "<group>"; };
+		635F25E81D98FF670022177C /* ThreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeTableViewCell.h; sourceTree = "<group>"; };
+		635F25E91D98FF670022177C /* ThreeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreeTableViewCell.m; sourceTree = "<group>"; };
+		635F25EC1D9908580022177C /* 三星.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "三星.csv"; sourceTree = "<group>"; };
 		63663F971D8634DF00172D6C /* BottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomView.h; sourceTree = "<group>"; };
 		63663F981D8634DF00172D6C /* BottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomView.m; sourceTree = "<group>"; };
 		63663F9B1D86399F00172D6C /* sanjiao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sanjiao.png; sourceTree = "<group>"; };
-		6367922C1D866B710064B924 /* jpush-ios-2.1.9.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.1.9.a"; sourceTree = "<group>"; };
-		6367922D1D866B710064B924 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		636792311D866C100064B924 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		636792361D866C390064B924 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		636792381D866C480064B924 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -176,16 +189,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6367923C1D86707C0064B924 /* libz.tbd in Frameworks */,
-				6367923A1D866C500064B924 /* Security.framework in Frameworks */,
-				636792391D866C480064B924 /* UIKit.framework in Frameworks */,
-				636792371D866C390064B924 /* Foundation.framework in Frameworks */,
-				636792351D866C310064B924 /* CoreGraphics.framework in Frameworks */,
-				636792341D866C290064B924 /* SystemConfiguration.framework in Frameworks */,
-				636792331D866C1F0064B924 /* CoreTelephony.framework in Frameworks */,
-				636792321D866C100064B924 /* CoreFoundation.framework in Frameworks */,
-				636792301D866BF30064B924 /* CFNetwork.framework in Frameworks */,
-				6367922E1D866B710064B924 /* jpush-ios-2.1.9.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +262,30 @@
 			name = DanMaView;
 			sourceTree = "<group>";
 		};
+		635F25D61D98FBA70022177C /* ThreeView */ = {
+			isa = PBXGroup;
+			children = (
+				635F25D81D98FBD20022177C /* ThreeHeadView.h */,
+				635F25D91D98FBD20022177C /* ThreeHeadView.m */,
+				635F25E81D98FF670022177C /* ThreeTableViewCell.h */,
+				635F25E91D98FF670022177C /* ThreeTableViewCell.m */,
+			);
+			name = ThreeView;
+			sourceTree = "<group>";
+		};
+		635F25D71D98FBB70022177C /* ThreeModel */ = {
+			isa = PBXGroup;
+			children = (
+				635F25DC1D98FCC20022177C /* ThreePublicModel.h */,
+				635F25DD1D98FCC20022177C /* ThreePublicModel.m */,
+				635F25E41D98FCF00022177C /* ThreeModel.h */,
+				635F25E51D98FCF00022177C /* ThreeModel.m */,
+				635F25E01D98FCDB0022177C /* ThreeViewModel.h */,
+				635F25E11D98FCDB0022177C /* ThreeViewModel.m */,
+			);
+			name = ThreeModel;
+			sourceTree = "<group>";
+		};
 		636792291D8665230064B924 /* MainModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,28 +301,12 @@
 			name = MainModel;
 			sourceTree = "<group>";
 		};
-		6367922A1D866B690064B924 /* Jpush */ = {
-			isa = PBXGroup;
-			children = (
-				6367922B1D866B710064B924 /* Lib */,
-			);
-			name = Jpush;
-			sourceTree = "<group>";
-		};
-		6367922B1D866B710064B924 /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-				6367922C1D866B710064B924 /* jpush-ios-2.1.9.a */,
-				6367922D1D866B710064B924 /* JPUSHService.h */,
-			);
-			path = Lib;
-			sourceTree = "<group>";
-		};
 		7A7771021D80512300E22BAF /* MainView */ = {
 			isa = PBXGroup;
 			children = (
 				632A697A1D8699C100FC0F81 /* 胆码.csv */,
 				632A697C1D8699DC00FC0F81 /* 五星数据.csv */,
+				635F25EC1D9908580022177C /* 三星.csv */,
 				63663F9B1D86399F00172D6C /* sanjiao.png */,
 				7A7771031D80514D00E22BAF /* TopView.h */,
 				7A7771041D80514D00E22BAF /* TopView.m */,
@@ -330,7 +341,6 @@
 		7AB94FCB1D803C5F00159ADE /* SSC */ = {
 			isa = PBXGroup;
 			children = (
-				6367922A1D866B690064B924 /* Jpush */,
 				6301B7831D8111340002B283 /* MJRefresh */,
 				6301B76F1D8111280002B283 /* AFNetworking */,
 				7AB94FCF1D803C5F00159ADE /* AppDelegate.h */,
@@ -346,6 +356,10 @@
 				634573641D878F3D00C48B3A /* DanMaViewController.m */,
 				634573781D87A58C00C48B3A /* DanMaView */,
 				6345736F1D87A04100C48B3A /* DanmaModel */,
+				635F25D21D98F5310022177C /* ThreeStarViewController.h */,
+				635F25D31D98F5310022177C /* ThreeStarViewController.m */,
+				635F25D61D98FBA70022177C /* ThreeView */,
+				635F25D71D98FBB70022177C /* ThreeModel */,
 				636792291D8665230064B924 /* MainModel */,
 				7A7771021D80512300E22BAF /* MainView */,
 				632A697E1D869E1500FC0F81 /* Main.storyboard */,
@@ -392,16 +406,21 @@
 				63663F991D8634DF00172D6C /* BottomView.h in Headers */,
 				634573651D878F3D00C48B3A /* DanMaViewController.h in Headers */,
 				632A69701D8695E200FC0F81 /* RequestViewModel.h in Headers */,
+				635F25EA1D98FF670022177C /* ThreeTableViewCell.h in Headers */,
 				634573721D87A05900C48B3A /* DanmaPublicModel.h in Headers */,
+				635F25DA1D98FBD20022177C /* ThreeHeadView.h in Headers */,
 				6345737F1D87A60B00C48B3A /* DMHeadView.h in Headers */,
 				634573691D87949800C48B3A /* StarViewController.h in Headers */,
 				6345736D1D879FAA00C48B3A /* DanmaViewModel.h in Headers */,
 				634573611D878F2300C48B3A /* MoveViewController.h in Headers */,
+				635F25DE1D98FCC20022177C /* ThreePublicModel.h in Headers */,
+				635F25E61D98FCF00022177C /* ThreeModel.h in Headers */,
+				635F25E21D98FCDB0022177C /* ThreeViewModel.h in Headers */,
 				634573761D87A07500C48B3A /* DanmaModel.h in Headers */,
 				632A69741D8695F100FC0F81 /* RequestModel.h in Headers */,
 				632A69781D86997300FC0F81 /* CSVModel.h in Headers */,
+				635F25D41D98F5310022177C /* ThreeStarViewController.h in Headers */,
 				634573831D87A65000C48B3A /* DMTableViewCell.h in Headers */,
-				6367922F1D866B710064B924 /* JPUSHService.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +451,7 @@
 		7AB94FC11D803C5F00159ADE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Hao Sheng";
 				TargetAttributes = {
 					7AB94FC81D803C5F00159ADE = {
@@ -464,6 +483,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				635F25ED1D9908580022177C /* 三星.csv in Resources */,
 				632A697F1D869E1500FC0F81 /* Main.storyboard in Resources */,
 				7AB94FDC1D803C5F00159ADE /* LaunchScreen.storyboard in Resources */,
 				7AB94FD91D803C5F00159ADE /* Assets.xcassets in Resources */,
@@ -481,13 +501,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				635F25DB1D98FBD20022177C /* ThreeHeadView.m in Sources */,
+				635F25DF1D98FCC20022177C /* ThreePublicModel.m in Sources */,
 				6301B7991D8111340002B283 /* UIScrollView+MJExtension.m in Sources */,
 				6301B7971D8111340002B283 /* MJRefreshFooterView.m in Sources */,
+				635F25E71D98FCF00022177C /* ThreeModel.m in Sources */,
 				632A69711D8695E200FC0F81 /* RequestViewModel.m in Sources */,
 				6301B76E1D80FB280002B283 /* TableViewCell.m in Sources */,
 				634573661D878F3D00C48B3A /* DanMaViewController.m in Sources */,
 				634573801D87A60B00C48B3A /* DMHeadView.m in Sources */,
 				6301B7981D8111340002B283 /* MJRefreshHeaderView.m in Sources */,
+				635F25EB1D98FF670022177C /* ThreeTableViewCell.m in Sources */,
 				6301B77E1D8111280002B283 /* AFNetworkReachabilityManager.m in Sources */,
 				7AB94FD41D803C5F00159ADE /* ViewController.m in Sources */,
 				7A7771051D80514D00E22BAF /* TopView.m in Sources */,
@@ -502,10 +526,12 @@
 				634573621D878F2300C48B3A /* MoveViewController.m in Sources */,
 				634573731D87A05900C48B3A /* DanmaPublicModel.m in Sources */,
 				6301B7A11D8121880002B283 /* MainModel.m in Sources */,
+				635F25E31D98FCDB0022177C /* ThreeViewModel.m in Sources */,
 				6345736A1D87949800C48B3A /* StarViewController.m in Sources */,
 				634573771D87A07500C48B3A /* DanmaModel.m in Sources */,
 				6301B7951D8111340002B283 /* MJRefreshBaseView.m in Sources */,
 				6301B7811D8111280002B283 /* AFURLResponseSerialization.m in Sources */,
+				635F25D51D98F5310022177C /* ThreeStarViewController.m in Sources */,
 				6301B7821D8111280002B283 /* AFURLSessionManager.m in Sources */,
 				6301B77D1D8111280002B283 /* AFHTTPSessionManager.m in Sources */,
 				634573841D87A65000C48B3A /* DMTableViewCell.m in Sources */,
@@ -545,8 +571,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Guodong(Beijing) Network Technology Co., Ltd. (W3F8ZLM4DL)";
@@ -592,8 +620,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Guodong(Beijing) Network Technology Co., Ltd. (W3F8ZLM4DL)";
@@ -623,8 +653,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Guodong(Beijing) Network Technology Co., Ltd. (W3F8ZLM4DL)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Guodong(Beijing) Network Technology Co., Ltd. (W3F8ZLM4DL)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Bin Zhang (V7GV47DN5L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bin Zhang (V7GV47DN5L)";
+				DEVELOPMENT_TEAM = W3F8ZLM4DL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SSC",
@@ -640,7 +671,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.guodong.ssc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9b5eacd7-6ff3-401b-8254-945a7d57fdd2";
+				PROVISIONING_PROFILE = "ce964797-6c6c-48ac-a677-1b27c6c258a6";
+				PROVISIONING_PROFILE_SPECIFIER = "SSC开发配置";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -649,8 +681,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Guodong(Beijing) Network Technology Co., Ltd. (W3F8ZLM4DL)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Guodong(Beijing) Network Technology Co., Ltd. (W3F8ZLM4DL)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Bin Zhang (V7GV47DN5L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bin Zhang (V7GV47DN5L)";
+				DEVELOPMENT_TEAM = W3F8ZLM4DL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SSC",
@@ -666,7 +699,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.guodong.ssc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9b5eacd7-6ff3-401b-8254-945a7d57fdd2";
+				PROVISIONING_PROFILE = "ce964797-6c6c-48ac-a677-1b27c6c258a6";
+				PROVISIONING_PROFILE_SPECIFIER = "SSC开发配置";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

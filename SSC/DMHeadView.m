@@ -47,7 +47,7 @@
     UILabel *line3 = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(pre_numLabel.frame) - Adaptive(0.5),
                                                                0,
                                                                Adaptive(.5),
-                                                               60)];
+                                                               Adaptive(60))];
     line3.backgroundColor = [UIColor blackColor];
     [self addSubview:line3];
     

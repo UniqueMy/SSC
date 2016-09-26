@@ -25,7 +25,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor orangeColor];
+    self.view.backgroundColor = BaseGryColor;
     
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,
                                                                0,

@@ -10,13 +10,15 @@
 
 #import "DanMaViewController.h"
 #import "StarViewController.h"
+#import "ThreeStarViewController.h"
 
 #import "TopView.h"
 
 @interface MoveViewController ()<UIScrollViewDelegate>
 
-@property (nonatomic,strong) StarViewController *starVC;
-@property (nonatomic,strong) DanMaViewController *danmaVC;
+@property (nonatomic,strong) StarViewController      *starVC;
+@property (nonatomic,strong) DanMaViewController     *danmaVC;
+@property (nonatomic,strong) ThreeStarViewController *threeVC;
 
 @property (nonatomic,retain) NSMutableArray *titleArray;
 
@@ -55,6 +57,18 @@
     
 }
 
+- (UIViewController *)threeVC {
+    
+    if (!_threeVC) {
+        _threeVC            = [[ThreeStarViewController alloc] init];
+        _threeVC.view.frame = CGRectMake(viewWidth * 2, 0, viewWidth, _tableScroll.frame.size.height);
+        _threeVC.buttonTag  = _buttonTag;
+        [self addChildViewController:_threeVC];
+        [_tableScroll addSubview:_threeVC.view];
+    }
+    return _threeVC;
+    
+}
 
 
 - (void)viewDidLoad {
@@ -75,6 +89,7 @@
     self.titleArray  = [NSMutableArray array];
     [self.titleArray addObject:@"五星"];
     [self.titleArray addObject:@"胆码"];
+    [self.titleArray addObject:@"三星"];
     
     self.automaticallyAdjustsScrollViewInsets = NO; //必要的一步
     
@@ -122,7 +137,7 @@
     _scrollView.bounces = NO;
     
     //设置提示条目
-    moveImageView = [[UIImageView alloc] initWithFrame:CGRectMake(viewWidth / 4 - Adaptive(7.5), 0, Adaptive(15), Adaptive(10))];
+    moveImageView = [[UIImageView alloc] initWithFrame:CGRectMake(viewWidth / 6 - Adaptive(7.5), 0, Adaptive(15), Adaptive(10))];
     moveImageView.image = [UIImage imageNamed:@"sanjiao"];
     [_scrollView addSubview:moveImageView];
     
@@ -159,9 +174,11 @@
     
     UIButton *button1 = (UIButton *)[self.view viewWithTag:1];
     UIButton *button2 = (UIButton *)[self.view viewWithTag:2];
+    UIButton *button3 = (UIButton *)[self.view viewWithTag:3];
     
     [button1 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [button2 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [button3 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [button  setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
     /**
@@ -189,7 +206,7 @@
     [UIView animateWithDuration:.2f animations:^{
         
         // 移动滑块
-        NSInteger OriginX   =  offset.x / 2 + viewWidth / 4 - Adaptive(7.5);
+        NSInteger OriginX   =  offset.x / 3 + viewWidth / 6 - Adaptive(7.5);
         moveImageView.frame = CGRectMake(OriginX,0,Adaptive(15), Adaptive(10));
         // 移动主视图
         _tableScroll.contentOffset=CGPointMake(offset.x, 0);
@@ -204,9 +221,11 @@
     
     UIButton *button1 = (UIButton *)[self.view viewWithTag:1];
     UIButton *button2 = (UIButton *)[self.view viewWithTag:2];
+    UIButton *button3 = (UIButton *)[self.view viewWithTag:3];
     
     [button1 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [button2 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [button3 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
 
     [button  setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
@@ -220,7 +239,20 @@
 // 根据button.tag值添加不同的视图
 - (void)addchooseViewControllerWithNumber:(NSInteger )number {
     
-    number == 1 ? [self starVC] : [self danmaVC];
+    switch (number) {
+        case 1:
+            [self starVC];
+            break;
+        case 2:
+            [self danmaVC];
+            break;
+        case 3:
+            [self threeVC];
+            break;
+            
+        default:
+            break;
+    }
     
 }
 

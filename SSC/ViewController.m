@@ -67,8 +67,19 @@
         
         CSVModel *csv = [CSVModel sharedModelManager];
         csv.fiveStarArray = [HttpTool readCSVDataWithNSString:@"五星数据"];
-        
+       
+       
     });
+    
+    dispatch_queue_t async2 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    dispatch_async(async2, ^{
+        
+        CSVModel *csv = [CSVModel sharedModelManager];
+        csv.threeStarArray = [HttpTool readCSVDataWithNSString:@"三星"];
+       
+    });
+    
 }
 
 - (void)buttonClick:(UIButton *)button {
