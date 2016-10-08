@@ -26,6 +26,11 @@
     ThreeHeadView  *headView;
     NSMutableArray *allDataArray;
 }
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+   
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = BaseGryColor;
@@ -48,7 +53,14 @@
     // 2.集成刷新控件
     [self setupRefresh];
     
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tongzhi:) name:@"refush" object:nil];
+    
 }
+
+- (void)tongzhi:(NSNotification *)notification {
+    [self startRequestAllData];
+}
+
 /**
  *  集成刷新控件
  */
@@ -91,7 +103,10 @@
     }
     
     ThreeModel *threeModel = [[ThreeModel alloc] init];
-    NSString *url          = [NSString stringWithFormat:@"http://www.antson.cn:8080/stars/?city=%@&type=sanxin",city];
+    
+    NSString *type = _number == 3 ? @"sanxin" : @"zusan";
+    
+    NSString *url          = [NSString stringWithFormat:@"http://www.antson.cn:8080/stars/?city=%@&type=%@",city,type];
     [threeModel setBlockWithReturnBlock:^(id returnValue) {
         
         allDataArray  = (NSMutableArray *)returnValue;

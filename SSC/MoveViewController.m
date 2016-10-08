@@ -11,6 +11,7 @@
 #import "DanMaViewController.h"
 #import "StarViewController.h"
 #import "ThreeStarViewController.h"
+#import "CompareViewController.h"
 
 #import "TopView.h"
 
@@ -19,6 +20,7 @@
 @property (nonatomic,strong) StarViewController      *starVC;
 @property (nonatomic,strong) DanMaViewController     *danmaVC;
 @property (nonatomic,strong) ThreeStarViewController *threeVC;
+@property (nonatomic,strong) CompareViewController   *compareVC;
 
 @property (nonatomic,retain) NSMutableArray *titleArray;
 
@@ -70,6 +72,19 @@
     
 }
 
+- (UIViewController *)compareVC {
+    
+    if (!_compareVC) {
+        _compareVC            = [[CompareViewController alloc] init];
+        _compareVC.view.frame = CGRectMake(viewWidth * 4, 0, viewWidth, _tableScroll.frame.size.height);
+        _compareVC.buttonTag  = _buttonTag;
+        [self addChildViewController:_compareVC];
+        [_tableScroll addSubview:_compareVC.view];
+    }
+    return _threeVC;
+    
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -90,6 +105,8 @@
     [self.titleArray addObject:@"五星"];
     [self.titleArray addObject:@"胆码"];
     [self.titleArray addObject:@"三星"];
+    [self.titleArray addObject:@"组三"];
+    [self.titleArray addObject:@"34567"];
     
     self.automaticallyAdjustsScrollViewInsets = NO; //必要的一步
     
@@ -99,6 +116,9 @@
     [self addtableScroll];
     //    添加内容
     [self addContentView];
+    
+    
+    
 }
 
 // 添加item 标题Scroller
@@ -137,7 +157,7 @@
     _scrollView.bounces = NO;
     
     //设置提示条目
-    moveImageView = [[UIImageView alloc] initWithFrame:CGRectMake(viewWidth / 6 - Adaptive(7.5), 0, Adaptive(15), Adaptive(10))];
+    moveImageView = [[UIImageView alloc] initWithFrame:CGRectMake(viewWidth / [self.titleArray count] / 2 - Adaptive(7.5), 0, Adaptive(15), Adaptive(10))];
     moveImageView.image = [UIImage imageNamed:@"sanjiao"];
     [_scrollView addSubview:moveImageView];
     
@@ -173,12 +193,21 @@
 - (void)titleClick:(UIButton *)button {
     
     UIButton *button1 = (UIButton *)[self.view viewWithTag:1];
-    UIButton *button2 = (UIButton *)[self.view viewWithTag:2];
-    UIButton *button3 = (UIButton *)[self.view viewWithTag:3];
-    
     [button1 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    
+    UIButton *button2 = (UIButton *)[self.view viewWithTag:2];
     [button2 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    
+    UIButton *button3 = (UIButton *)[self.view viewWithTag:3];
     [button3 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    
+    UIButton *button4 = (UIButton *)[self.view viewWithTag:4];
+    [button4 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    
+    UIButton *button5 = (UIButton *)[self.view viewWithTag:5];
+    [button5 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    
+    
     [button  setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
     /**
@@ -206,7 +235,7 @@
     [UIView animateWithDuration:.2f animations:^{
         
         // 移动滑块
-        NSInteger OriginX   =  offset.x / 3 + viewWidth / 6 - Adaptive(7.5);
+        NSInteger OriginX   =  offset.x / [self.titleArray count] + viewWidth / [self.titleArray count] / 2 - Adaptive(7.5);
         moveImageView.frame = CGRectMake(OriginX,0,Adaptive(15), Adaptive(10));
         // 移动主视图
         _tableScroll.contentOffset=CGPointMake(offset.x, 0);
@@ -220,12 +249,21 @@
     UIButton *button  = (UIButton *)[self.view viewWithTag:offset.x / viewWidth + 1];
     
     UIButton *button1 = (UIButton *)[self.view viewWithTag:1];
-    UIButton *button2 = (UIButton *)[self.view viewWithTag:2];
-    UIButton *button3 = (UIButton *)[self.view viewWithTag:3];
-    
     [button1 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    
+    UIButton *button2 = (UIButton *)[self.view viewWithTag:2];
     [button2 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    
+    UIButton *button3 = (UIButton *)[self.view viewWithTag:3];
     [button3 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    
+    UIButton *button4 = (UIButton *)[self.view viewWithTag:4];
+    [button4 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+
+    UIButton *button5 = (UIButton *)[self.view viewWithTag:5];
+    [button5 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    
+    
 
     [button  setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
@@ -238,7 +276,7 @@
 
 // 根据button.tag值添加不同的视图
 - (void)addchooseViewControllerWithNumber:(NSInteger )number {
-    
+    NSLog(@"number %ld",(long)number);
     switch (number) {
         case 1:
             [self starVC];
@@ -246,10 +284,31 @@
         case 2:
             [self danmaVC];
             break;
-        case 3:
+        case 3:{
+            self.threeVC.view.frame = CGRectMake(viewWidth * 2, 0, viewWidth, _tableScroll.frame.size.height);
+            self.threeVC.number     = number;
             [self threeVC];
-            break;
             
+            NSNotification *notification =[NSNotification notificationWithName:@"refush" object:nil userInfo:nil];
+            
+            //通过通知中心发送通知
+            [[NSNotificationCenter defaultCenter] postNotification:notification];
+
+        }
+            break;
+        case 4:{
+             self.threeVC.view.frame = CGRectMake(viewWidth * 3, 0, viewWidth, _tableScroll.frame.size.height);
+             self.threeVC.number     = number;
+            [self threeVC];
+            NSNotification *notification =[NSNotification notificationWithName:@"refush" object:nil userInfo:nil];
+            
+            //通过通知中心发送通知
+            [[NSNotificationCenter defaultCenter] postNotification:notification];
+        }
+            break;
+        case 5:
+            [self compareVC];
+            break;
         default:
             break;
     }

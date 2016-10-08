@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ThreeStarViewController : UIViewController
-
+@property (nonatomic) NSInteger number;
 @property (nonatomic) NSInteger buttonTag;
 
 @end

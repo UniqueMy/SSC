@@ -9,14 +9,33 @@
 #import "TopView.h"
 #import "ViewController.h"
 #import "CSVModel.h"
+#import "AppDelegate.h"
 @implementation TopView
 {
     UILabel          *topLabel;
     UIViewController *viewController;
     NSString         *fiveCopyString;
     NSString         *threeCopyString;
+    NSString         *groupThreeString;
     
 }
+
+//- (DateView *)dateView {
+//    
+//    if (!_dateView) {
+//    
+//        AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
+//        
+//        _dateView       = [[DateView alloc] init];
+//        _dateView.frame = CGRectMake(0,
+//                                     viewHeight - 216 - Adaptive(40),
+//                                     viewWidth,
+//                                     216 + Adaptive(40));
+//        [app.window addSubview:_dateView];
+//    }
+//    return _dateView;
+//}
+
 - (instancetype)initWithFrame:(CGRect)frame viewController:(UIViewController *)controller
 {
     self = [super initWithFrame:frame];
@@ -38,14 +57,14 @@
     
     
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    backButton.frame     = CGRectMake(viewWidth - Adaptive(63), 20 + (44 - Adaptive(15)) / 2, Adaptive(50), Adaptive(15));
+    backButton.frame     = CGRectMake(viewWidth - Adaptive(53), 20 + (44 - Adaptive(15)) / 2, Adaptive(40), Adaptive(15));
     [backButton setTitle:@"返回" forState:UIControlStateNormal];
     [backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(backClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:backButton];
     
     UIButton *copyThreeStar = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    copyThreeStar.frame     = CGRectMake(viewWidth - Adaptive(123), 20 + (44 - Adaptive(20)) / 2, Adaptive(40), Adaptive(20));
+    copyThreeStar.frame     = CGRectMake(viewWidth - Adaptive(103), 20 + (44 - Adaptive(20)) / 2, Adaptive(40), Adaptive(20));
     copyThreeStar.layer.cornerRadius  = 3;
     copyThreeStar.layer.masksToBounds = YES;
     copyThreeStar.layer.borderWidth   = 1;
@@ -58,7 +77,7 @@
     
     
     UIButton *copyFiveStar = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    copyFiveStar.frame     = CGRectMake(viewWidth - Adaptive(183), 20 + (44 - Adaptive(20)) / 2, Adaptive(40), Adaptive(20));
+    copyFiveStar.frame     = CGRectMake(viewWidth - Adaptive(153), 20 + (44 - Adaptive(20)) / 2, Adaptive(40), Adaptive(20));
     copyFiveStar.layer.cornerRadius  = 3;
     copyFiveStar.layer.masksToBounds = YES;
     copyFiveStar.layer.borderWidth   = 1;
@@ -69,10 +88,36 @@
     [copyFiveStar addTarget:self action:@selector(copyFiveStarClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:copyFiveStar];
     
+    UIButton *copyGroupThree = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    copyGroupThree.frame     = CGRectMake(viewWidth - Adaptive(203), 20 + (44 - Adaptive(20)) / 2, Adaptive(40), Adaptive(20));
+    copyGroupThree.layer.cornerRadius  = 3;
+    copyGroupThree.layer.masksToBounds = YES;
+    copyGroupThree.layer.borderWidth   = 1;
+    copyGroupThree.layer.borderColor   = [UIColor whiteColor].CGColor;
+    [copyGroupThree setTitle:@"组三" forState:UIControlStateNormal];
+    copyGroupThree.titleLabel.font = [UIFont systemFontOfSize:Adaptive(13)];
+    [copyGroupThree setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [copyGroupThree addTarget:self action:@selector(copyGroupThree:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:copyGroupThree];
     
     
-    [self copyThreeStarData];
-    [self copyFiveStarData];
+    
+//    UIButton *chooseDate = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//    chooseDate.frame     = CGRectMake(viewWidth - Adaptive(203), 20 + (44 - Adaptive(20)) / 2, Adaptive(40), Adaptive(20));
+//    chooseDate.layer.cornerRadius  = 3;
+//    chooseDate.layer.masksToBounds = YES;
+//    chooseDate.layer.borderWidth   = 1;
+//    chooseDate.layer.borderColor   = [UIColor whiteColor].CGColor;
+//    [chooseDate setTitle:@"日期" forState:UIControlStateNormal];
+//    chooseDate.titleLabel.font = [UIFont systemFontOfSize:Adaptive(13)];
+//    [chooseDate setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    [chooseDate addTarget:self action:@selector(chooseDate:) forControlEvents:UIControlEventTouchUpInside];
+//    [self addSubview:chooseDate];
+    
+    [self copyData];
+    
+    
+   
     
 }
 
@@ -81,27 +126,55 @@
     topLabel.text    = [NSString stringWithFormat:@"%@时时彩数据统计",_viewName];
 }
 
-- (void)copyFiveStarData {
+//- (void)chooseDate:(UIButton *)button {
+// 
+//    [self dateView];
+//    
+//}
+
+- (void)copyData {
     
     CSVModel *csv           = [CSVModel sharedModelManager];
+    
     dispatch_queue_t async2 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     
     dispatch_async(async2, ^{
         
         fiveCopyString = [csv.fiveStarArray componentsJoinedByString:@","];
     });
-}
-- (void)copyThreeStarData {
     
-    CSVModel *csv           = [CSVModel sharedModelManager];
     dispatch_queue_t async1 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     
     dispatch_async(async1, ^{
         
         threeCopyString = [csv.threeStarArray componentsJoinedByString:@","];
     });
+    
+    dispatch_queue_t async3 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    dispatch_async(async3, ^{
+        
+        groupThreeString = [csv.groupThreeArray componentsJoinedByString:@","];
+    });
+    
 }
 
+- (void)copyGroupThree:(UIButton *)button {
+    
+    dispatch_queue_t async1 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(async1, ^{
+        
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        pasteboard.string = groupThreeString;
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"复制组三成功" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [viewController presentViewController:alertController animated:YES completion:^{
+            [NSTimer scheduledTimerWithTimeInterval:0.5f target:self selector:@selector(creatAlert:) userInfo:alertController repeats:NO];
+            
+            
+        }];
+    });
+}
 
 - (void)copyFiveStarClick:(UIButton *)button {
     
@@ -110,7 +183,6 @@
         
         UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
         pasteboard.string = fiveCopyString;
-        NSLog(@"五星 %@",pasteboard.string);
         
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"复制五星成功" message:nil preferredStyle:UIAlertControllerStyleAlert];
         [viewController presentViewController:alertController animated:YES completion:^{
@@ -128,7 +200,7 @@
         
         UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
         pasteboard.string = threeCopyString;
-         NSLog(@"三星 %@",pasteboard.string);
+        
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"复制三星成功" message:nil preferredStyle:UIAlertControllerStyleAlert];
         [viewController presentViewController:alertController animated:YES completion:^{
             [NSTimer scheduledTimerWithTimeInterval:0.5f target:self selector:@selector(creatAlert:) userInfo:alertController repeats:NO];

@@ -1,21 +1,22 @@
 //
-//  TableViewCell.m
+//  CompareTableViewCell.m
 //  SSC
 //
-//  Created by mac on 16/9/8.
+//  Created by mac on 16/9/27.
 //  Copyright © 2016年 Hao Sheng. All rights reserved.
 //
-#import "MainModel.h"
-#import "TableViewCell.h"
 
-
-@implementation TableViewCell
+#import "CompareTableViewCell.h"
+#import "ComparePublicModel.h"
+@implementation CompareTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-       
+        
+        // 把自定义的控件 变成了单元格的属性
+        
         // 把自定义的控件 变成了单元格的属性
         self.backgroundColor = BaseGryColor;
         
@@ -24,7 +25,7 @@
         bottomLine.backgroundColor = [UIColor grayColor];
         [self addSubview:bottomLine];
         
-        CGFloat labelWidth = viewWidth  / 4;
+        CGFloat labelWidth = viewWidth  / 3;
         
         _timesNumberLabel = [[UILabel alloc] init];
         _timesNumberLabel.frame    = CGRectMake(0, 0, labelWidth, Adaptive(30));
@@ -35,7 +36,7 @@
         [self addSubview:_timesNumberLabel];
         
         
-        for (int a = 0; a < 4; a++) {
+        for (int a = 0; a < 3; a++) {
             UILabel *line = [[UILabel alloc] init];
             line.frame    = CGRectMake(labelWidth *(a + 1), 0, Adaptive(1), Adaptive(30));
             line.backgroundColor = [UIColor grayColor];
@@ -51,45 +52,24 @@
         _publishLabel.font      = [UIFont systemFontOfSize:Adaptive(13)];
         [self addSubview:_publishLabel];
         
-        _totalLabel = [[UILabel alloc] init];
-        _totalLabel.frame    = CGRectMake(CGRectGetMaxX(_publishLabel.frame), 0, labelWidth, Adaptive(30));
-        _totalLabel.text     = @"23";
-        _totalLabel.textAlignment = 1;
-        _totalLabel.textColor = [UIColor blackColor];
-        _totalLabel.font      = [UIFont systemFontOfSize:Adaptive(13)];
-        [self addSubview:_totalLabel];
         
         _YNLabel = [[UILabel alloc] init];
-        _YNLabel.frame    = CGRectMake(CGRectGetMaxX(_totalLabel.frame) +Adaptive(1) ,0, labelWidth - 1, Adaptive(29));
-        _YNLabel.text     = @"Y";
+        _YNLabel.frame    = CGRectMake(CGRectGetMaxX(_publishLabel.frame) +Adaptive(1) ,0, labelWidth - 1, Adaptive(29));
         _YNLabel.textAlignment = 1;
+        _YNLabel.text     = @"Y";
+        _YNLabel.backgroundColor = BaseGreenColor;
         _YNLabel.textColor = [UIColor blackColor];
         _YNLabel.font      = [UIFont systemFontOfSize:Adaptive(13)];
         [self addSubview:_YNLabel];
-        
     }
     return self;
 }
 
+- (void)setPublicModel:(ComparePublicModel *)publicModel {
+    _timesNumberLabel.text  = publicModel.timesNumberString;
+    _publishLabel.text      = publicModel.publishString;
+   
 
-- (void)setMainModel:(MainModel *)mainModel {
-    
-    _timesNumberLabel.text  = mainModel.timesNumberString;
-    _publishLabel.text      = mainModel.publishString;
-    _totalLabel.text        = mainModel.totalString;
-    
-    if (mainModel.trueOrFalse == YES) {
-        
-        _YNLabel.text     = @"Y";
-        _YNLabel.backgroundColor = BaseGreenColor;
-        
-    } else {
-        _YNLabel.text     = @"N";
-        _YNLabel.backgroundColor = BaseGryColor;
-    }
-    
-    
-    
-    }
+}
 
 @end

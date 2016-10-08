@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DateView.h"
 @interface TopView : UIView
 
-@property (nonatomic,strong) NSString *viewName;
+@property (nonatomic,strong) NSString     *viewName;
+@property (nonatomic,strong) DateView     *dateView;
 
 - (instancetype)initWithFrame:(CGRect)frame viewController:(UIViewController *)controller;
-
 
 @end

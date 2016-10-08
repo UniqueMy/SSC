@@ -67,6 +67,7 @@
         
         CSVModel *csv = [CSVModel sharedModelManager];
         csv.fiveStarArray = [HttpTool readCSVDataWithNSString:@"五星数据"];
+        [csv.fiveStarArray removeLastObject];
        
        
     });
@@ -77,7 +78,18 @@
         
         CSVModel *csv = [CSVModel sharedModelManager];
         csv.threeStarArray = [HttpTool readCSVDataWithNSString:@"三星"];
+        [csv.threeStarArray removeLastObject];
        
+    });
+    
+    dispatch_queue_t async3 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    dispatch_async(async3, ^{
+        
+        CSVModel *csv = [CSVModel sharedModelManager];
+        csv.groupThreeArray = [HttpTool readCSVDataWithNSString:@"组三"];
+        [csv.groupThreeArray removeLastObject];
+        
     });
     
 }

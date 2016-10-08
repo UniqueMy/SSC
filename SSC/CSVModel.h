@@ -12,6 +12,6 @@
 
 @property (nonatomic,strong) NSMutableArray  *fiveStarArray;
 @property (nonatomic,strong) NSMutableArray  *threeStarArray;
-@property (nonatomic,strong) NSMutableArray  *danmaArray;
+@property (nonatomic,strong) NSMutableArray  *groupThreeArray;
 + (instancetype)sharedModelManager;
 @end

@@ -62,9 +62,22 @@
 		635F25EA1D98FF670022177C /* ThreeTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 635F25E81D98FF670022177C /* ThreeTableViewCell.h */; };
 		635F25EB1D98FF670022177C /* ThreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 635F25E91D98FF670022177C /* ThreeTableViewCell.m */; };
 		635F25ED1D9908580022177C /* 三星.csv in Resources */ = {isa = PBXBuildFile; fileRef = 635F25EC1D9908580022177C /* 三星.csv */; };
-		63663F991D8634DF00172D6C /* BottomView.h in Headers */ = {isa = PBXBuildFile; fileRef = 63663F971D8634DF00172D6C /* BottomView.h */; };
-		63663F9A1D8634DF00172D6C /* BottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63663F981D8634DF00172D6C /* BottomView.m */; };
 		63663F9C1D86399F00172D6C /* sanjiao.png in Resources */ = {isa = PBXBuildFile; fileRef = 63663F9B1D86399F00172D6C /* sanjiao.png */; };
+		63E0B84D1D9A151100267AF9 /* DateView.h in Headers */ = {isa = PBXBuildFile; fileRef = 63E0B84B1D9A151100267AF9 /* DateView.h */; };
+		63E0B84E1D9A151100267AF9 /* DateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E0B84C1D9A151100267AF9 /* DateView.m */; };
+		63E0B8501D9A3C8C00267AF9 /* 组三.csv in Resources */ = {isa = PBXBuildFile; fileRef = 63E0B84F1D9A3C8C00267AF9 /* 组三.csv */; };
+		63E0B8611D9A485100267AF9 /* CompareViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 63E0B85F1D9A485100267AF9 /* CompareViewController.h */; };
+		63E0B8621D9A485100267AF9 /* CompareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E0B8601D9A485100267AF9 /* CompareViewController.m */; };
+		63E0B8671D9A49E400267AF9 /* CompareHeadView.h in Headers */ = {isa = PBXBuildFile; fileRef = 63E0B8651D9A49E400267AF9 /* CompareHeadView.h */; };
+		63E0B8681D9A49E400267AF9 /* CompareHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E0B8661D9A49E400267AF9 /* CompareHeadView.m */; };
+		63E0B86B1D9A4A3000267AF9 /* CompareTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 63E0B8691D9A4A3000267AF9 /* CompareTableViewCell.h */; };
+		63E0B86C1D9A4A3000267AF9 /* CompareTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E0B86A1D9A4A3000267AF9 /* CompareTableViewCell.m */; };
+		63E0B86F1D9A4CBD00267AF9 /* ComparePublicModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 63E0B86D1D9A4CBD00267AF9 /* ComparePublicModel.h */; };
+		63E0B8701D9A4CBD00267AF9 /* ComparePublicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E0B86E1D9A4CBD00267AF9 /* ComparePublicModel.m */; };
+		63E0B8731D9A4CCA00267AF9 /* CompareViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 63E0B8711D9A4CCA00267AF9 /* CompareViewModel.h */; };
+		63E0B8741D9A4CCA00267AF9 /* CompareViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E0B8721D9A4CCA00267AF9 /* CompareViewModel.m */; };
+		63E0B8771D9A4CE200267AF9 /* CompareModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 63E0B8751D9A4CE200267AF9 /* CompareModel.h */; };
+		63E0B8781D9A4CE200267AF9 /* CompareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E0B8761D9A4CE200267AF9 /* CompareModel.m */; };
 		7A7771051D80514D00E22BAF /* TopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7771041D80514D00E22BAF /* TopView.m */; };
 		7A7771091D805ABF00E22BAF /* HeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7771081D805ABF00E22BAF /* HeadView.m */; };
 		7AB94FCE1D803C5F00159ADE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB94FCD1D803C5F00159ADE /* main.m */; };
@@ -160,14 +173,27 @@
 		635F25E81D98FF670022177C /* ThreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeTableViewCell.h; sourceTree = "<group>"; };
 		635F25E91D98FF670022177C /* ThreeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreeTableViewCell.m; sourceTree = "<group>"; };
 		635F25EC1D9908580022177C /* 三星.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "三星.csv"; sourceTree = "<group>"; };
-		63663F971D8634DF00172D6C /* BottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomView.h; sourceTree = "<group>"; };
-		63663F981D8634DF00172D6C /* BottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomView.m; sourceTree = "<group>"; };
 		63663F9B1D86399F00172D6C /* sanjiao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sanjiao.png; sourceTree = "<group>"; };
 		636792311D866C100064B924 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		636792361D866C390064B924 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		636792381D866C480064B924 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6367923B1D86707C0064B924 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		6367923D1D8679EA0064B924 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		63E0B84B1D9A151100267AF9 /* DateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateView.h; sourceTree = "<group>"; };
+		63E0B84C1D9A151100267AF9 /* DateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateView.m; sourceTree = "<group>"; };
+		63E0B84F1D9A3C8C00267AF9 /* 组三.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "组三.csv"; sourceTree = "<group>"; };
+		63E0B85F1D9A485100267AF9 /* CompareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompareViewController.h; sourceTree = "<group>"; };
+		63E0B8601D9A485100267AF9 /* CompareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompareViewController.m; sourceTree = "<group>"; };
+		63E0B8651D9A49E400267AF9 /* CompareHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompareHeadView.h; sourceTree = "<group>"; };
+		63E0B8661D9A49E400267AF9 /* CompareHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompareHeadView.m; sourceTree = "<group>"; };
+		63E0B8691D9A4A3000267AF9 /* CompareTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompareTableViewCell.h; sourceTree = "<group>"; };
+		63E0B86A1D9A4A3000267AF9 /* CompareTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompareTableViewCell.m; sourceTree = "<group>"; };
+		63E0B86D1D9A4CBD00267AF9 /* ComparePublicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComparePublicModel.h; sourceTree = "<group>"; };
+		63E0B86E1D9A4CBD00267AF9 /* ComparePublicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComparePublicModel.m; sourceTree = "<group>"; };
+		63E0B8711D9A4CCA00267AF9 /* CompareViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompareViewModel.h; sourceTree = "<group>"; };
+		63E0B8721D9A4CCA00267AF9 /* CompareViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompareViewModel.m; sourceTree = "<group>"; };
+		63E0B8751D9A4CE200267AF9 /* CompareModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompareModel.h; sourceTree = "<group>"; };
+		63E0B8761D9A4CE200267AF9 /* CompareModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompareModel.m; sourceTree = "<group>"; };
 		7A7771031D80514D00E22BAF /* TopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopView.h; sourceTree = "<group>"; };
 		7A7771041D80514D00E22BAF /* TopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopView.m; sourceTree = "<group>"; };
 		7A7771061D8051CE00E22BAF /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = ../PrefixHeader.pch; sourceTree = "<group>"; };
@@ -238,7 +264,62 @@
 			path = MJRefresh;
 			sourceTree = "<group>";
 		};
-		6345736F1D87A04100C48B3A /* DanmaModel */ = {
+		636792291D8665230064B924 /* MainModel */ = {
+			isa = PBXGroup;
+			children = (
+				632A69761D86997300FC0F81 /* CSVModel.h */,
+				632A69771D86997300FC0F81 /* CSVModel.m */,
+			);
+			name = MainModel;
+			sourceTree = "<group>";
+		};
+		63E0B8511D9A3DBF00267AF9 /* FiveStar */ = {
+			isa = PBXGroup;
+			children = (
+				634573671D87949800C48B3A /* StarViewController.h */,
+				634573681D87949800C48B3A /* StarViewController.m */,
+				63E0B8521D9A3E0C00267AF9 /* View */,
+				63E0B8531D9A3E5400267AF9 /* Model */,
+			);
+			name = FiveStar;
+			sourceTree = "<group>";
+		};
+		63E0B8521D9A3E0C00267AF9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7A7771071D805ABF00E22BAF /* HeadView.h */,
+				7A7771081D805ABF00E22BAF /* HeadView.m */,
+				6301B76C1D80FB280002B283 /* TableViewCell.h */,
+				6301B76D1D80FB280002B283 /* TableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		63E0B8531D9A3E5400267AF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6301B79F1D8121880002B283 /* MainModel.h */,
+				6301B7A01D8121880002B283 /* MainModel.m */,
+				632A69721D8695F100FC0F81 /* RequestModel.h */,
+				632A69731D8695F100FC0F81 /* RequestModel.m */,
+				632A696E1D8695E200FC0F81 /* RequestViewModel.h */,
+				632A696F1D8695E200FC0F81 /* RequestViewModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		63E0B8541D9A3E6600267AF9 /* DanMa */ = {
+			isa = PBXGroup;
+			children = (
+				634573631D878F3D00C48B3A /* DanMaViewController.h */,
+				634573641D878F3D00C48B3A /* DanMaViewController.m */,
+				63E0B8561D9A3E8500267AF9 /* View */,
+				63E0B8551D9A3E7700267AF9 /* Model */,
+			);
+			name = DanMa;
+			sourceTree = "<group>";
+		};
+		63E0B8551D9A3E7700267AF9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				634573741D87A07500C48B3A /* DanmaModel.h */,
@@ -248,10 +329,10 @@
 				634573701D87A05900C48B3A /* DanmaPublicModel.h */,
 				634573711D87A05900C48B3A /* DanmaPublicModel.m */,
 			);
-			name = DanmaModel;
+			name = Model;
 			sourceTree = "<group>";
 		};
-		634573781D87A58C00C48B3A /* DanMaView */ = {
+		63E0B8561D9A3E8500267AF9 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				6345737D1D87A60B00C48B3A /* DMHeadView.h */,
@@ -259,21 +340,32 @@
 				634573811D87A65000C48B3A /* DMTableViewCell.h */,
 				634573821D87A65000C48B3A /* DMTableViewCell.m */,
 			);
-			name = DanMaView;
+			name = View;
 			sourceTree = "<group>";
 		};
-		635F25D61D98FBA70022177C /* ThreeView */ = {
+		63E0B8571D9A3EA800267AF9 /* ThreeStar && GroupThree */ = {
 			isa = PBXGroup;
 			children = (
-				635F25D81D98FBD20022177C /* ThreeHeadView.h */,
-				635F25D91D98FBD20022177C /* ThreeHeadView.m */,
-				635F25E81D98FF670022177C /* ThreeTableViewCell.h */,
-				635F25E91D98FF670022177C /* ThreeTableViewCell.m */,
+				635F25D21D98F5310022177C /* ThreeStarViewController.h */,
+				635F25D31D98F5310022177C /* ThreeStarViewController.m */,
+				63E0B85A1D9A3ED900267AF9 /* View */,
+				63E0B8591D9A3ED300267AF9 /* Model */,
 			);
-			name = ThreeView;
+			name = "ThreeStar && GroupThree";
 			sourceTree = "<group>";
 		};
-		635F25D71D98FBB70022177C /* ThreeModel */ = {
+		63E0B8581D9A3EB000267AF9 /* Compare */ = {
+			isa = PBXGroup;
+			children = (
+				63E0B85F1D9A485100267AF9 /* CompareViewController.h */,
+				63E0B8601D9A485100267AF9 /* CompareViewController.m */,
+				63E0B8641D9A49D100267AF9 /* View */,
+				63E0B8631D9A49CB00267AF9 /* Model */,
+			);
+			name = Compare;
+			sourceTree = "<group>";
+		};
+		63E0B8591D9A3ED300267AF9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				635F25DC1D98FCC20022177C /* ThreePublicModel.h */,
@@ -283,39 +375,56 @@
 				635F25E01D98FCDB0022177C /* ThreeViewModel.h */,
 				635F25E11D98FCDB0022177C /* ThreeViewModel.m */,
 			);
-			name = ThreeModel;
+			name = Model;
 			sourceTree = "<group>";
 		};
-		636792291D8665230064B924 /* MainModel */ = {
+		63E0B85A1D9A3ED900267AF9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				632A69761D86997300FC0F81 /* CSVModel.h */,
-				632A69771D86997300FC0F81 /* CSVModel.m */,
-				6301B79F1D8121880002B283 /* MainModel.h */,
-				6301B7A01D8121880002B283 /* MainModel.m */,
-				632A69721D8695F100FC0F81 /* RequestModel.h */,
-				632A69731D8695F100FC0F81 /* RequestModel.m */,
-				632A696E1D8695E200FC0F81 /* RequestViewModel.h */,
-				632A696F1D8695E200FC0F81 /* RequestViewModel.m */,
+				635F25D81D98FBD20022177C /* ThreeHeadView.h */,
+				635F25D91D98FBD20022177C /* ThreeHeadView.m */,
+				635F25E81D98FF670022177C /* ThreeTableViewCell.h */,
+				635F25E91D98FF670022177C /* ThreeTableViewCell.m */,
 			);
-			name = MainModel;
+			name = View;
+			sourceTree = "<group>";
+		};
+		63E0B8631D9A49CB00267AF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63E0B86D1D9A4CBD00267AF9 /* ComparePublicModel.h */,
+				63E0B86E1D9A4CBD00267AF9 /* ComparePublicModel.m */,
+				63E0B8751D9A4CE200267AF9 /* CompareModel.h */,
+				63E0B8761D9A4CE200267AF9 /* CompareModel.m */,
+				63E0B8711D9A4CCA00267AF9 /* CompareViewModel.h */,
+				63E0B8721D9A4CCA00267AF9 /* CompareViewModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		63E0B8641D9A49D100267AF9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63E0B8651D9A49E400267AF9 /* CompareHeadView.h */,
+				63E0B8661D9A49E400267AF9 /* CompareHeadView.m */,
+				63E0B8691D9A4A3000267AF9 /* CompareTableViewCell.h */,
+				63E0B86A1D9A4A3000267AF9 /* CompareTableViewCell.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		7A7771021D80512300E22BAF /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				63E0B84F1D9A3C8C00267AF9 /* 组三.csv */,
 				632A697A1D8699C100FC0F81 /* 胆码.csv */,
 				632A697C1D8699DC00FC0F81 /* 五星数据.csv */,
 				635F25EC1D9908580022177C /* 三星.csv */,
 				63663F9B1D86399F00172D6C /* sanjiao.png */,
 				7A7771031D80514D00E22BAF /* TopView.h */,
 				7A7771041D80514D00E22BAF /* TopView.m */,
-				7A7771071D805ABF00E22BAF /* HeadView.h */,
-				7A7771081D805ABF00E22BAF /* HeadView.m */,
-				63663F971D8634DF00172D6C /* BottomView.h */,
-				63663F981D8634DF00172D6C /* BottomView.m */,
-				6301B76C1D80FB280002B283 /* TableViewCell.h */,
-				6301B76D1D80FB280002B283 /* TableViewCell.m */,
+				63E0B84B1D9A151100267AF9 /* DateView.h */,
+				63E0B84C1D9A151100267AF9 /* DateView.m */,
 				6301B79C1D811F090002B283 /* HttpTool.h */,
 				6301B79D1D811F090002B283 /* HttpTool.m */,
 			);
@@ -350,16 +459,10 @@
 				7AB94FD31D803C5F00159ADE /* ViewController.m */,
 				6345735F1D878F2300C48B3A /* MoveViewController.h */,
 				634573601D878F2300C48B3A /* MoveViewController.m */,
-				634573671D87949800C48B3A /* StarViewController.h */,
-				634573681D87949800C48B3A /* StarViewController.m */,
-				634573631D878F3D00C48B3A /* DanMaViewController.h */,
-				634573641D878F3D00C48B3A /* DanMaViewController.m */,
-				634573781D87A58C00C48B3A /* DanMaView */,
-				6345736F1D87A04100C48B3A /* DanmaModel */,
-				635F25D21D98F5310022177C /* ThreeStarViewController.h */,
-				635F25D31D98F5310022177C /* ThreeStarViewController.m */,
-				635F25D61D98FBA70022177C /* ThreeView */,
-				635F25D71D98FBB70022177C /* ThreeModel */,
+				63E0B8581D9A3EB000267AF9 /* Compare */,
+				63E0B8571D9A3EA800267AF9 /* ThreeStar && GroupThree */,
+				63E0B8541D9A3E6600267AF9 /* DanMa */,
+				63E0B8511D9A3DBF00267AF9 /* FiveStar */,
 				636792291D8665230064B924 /* MainModel */,
 				7A7771021D80512300E22BAF /* MainView */,
 				632A697E1D869E1500FC0F81 /* Main.storyboard */,
@@ -403,7 +506,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63663F991D8634DF00172D6C /* BottomView.h in Headers */,
 				634573651D878F3D00C48B3A /* DanMaViewController.h in Headers */,
 				632A69701D8695E200FC0F81 /* RequestViewModel.h in Headers */,
 				635F25EA1D98FF670022177C /* ThreeTableViewCell.h in Headers */,
@@ -411,14 +513,21 @@
 				635F25DA1D98FBD20022177C /* ThreeHeadView.h in Headers */,
 				6345737F1D87A60B00C48B3A /* DMHeadView.h in Headers */,
 				634573691D87949800C48B3A /* StarViewController.h in Headers */,
+				63E0B86B1D9A4A3000267AF9 /* CompareTableViewCell.h in Headers */,
 				6345736D1D879FAA00C48B3A /* DanmaViewModel.h in Headers */,
+				63E0B84D1D9A151100267AF9 /* DateView.h in Headers */,
 				634573611D878F2300C48B3A /* MoveViewController.h in Headers */,
+				63E0B8731D9A4CCA00267AF9 /* CompareViewModel.h in Headers */,
 				635F25DE1D98FCC20022177C /* ThreePublicModel.h in Headers */,
+				63E0B8671D9A49E400267AF9 /* CompareHeadView.h in Headers */,
+				63E0B86F1D9A4CBD00267AF9 /* ComparePublicModel.h in Headers */,
 				635F25E61D98FCF00022177C /* ThreeModel.h in Headers */,
 				635F25E21D98FCDB0022177C /* ThreeViewModel.h in Headers */,
 				634573761D87A07500C48B3A /* DanmaModel.h in Headers */,
 				632A69741D8695F100FC0F81 /* RequestModel.h in Headers */,
 				632A69781D86997300FC0F81 /* CSVModel.h in Headers */,
+				63E0B8771D9A4CE200267AF9 /* CompareModel.h in Headers */,
+				63E0B8611D9A485100267AF9 /* CompareViewController.h in Headers */,
 				635F25D41D98F5310022177C /* ThreeStarViewController.h in Headers */,
 				634573831D87A65000C48B3A /* DMTableViewCell.h in Headers */,
 			);
@@ -490,6 +599,7 @@
 				6301B7941D8111340002B283 /* MJRefresh.bundle in Resources */,
 				63663F9C1D86399F00172D6C /* sanjiao.png in Resources */,
 				632A697D1D8699DC00FC0F81 /* 五星数据.csv in Resources */,
+				63E0B8501D9A3C8C00267AF9 /* 组三.csv in Resources */,
 				632A697B1D8699C100FC0F81 /* 胆码.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,13 +611,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63E0B8621D9A485100267AF9 /* CompareViewController.m in Sources */,
 				635F25DB1D98FBD20022177C /* ThreeHeadView.m in Sources */,
 				635F25DF1D98FCC20022177C /* ThreePublicModel.m in Sources */,
 				6301B7991D8111340002B283 /* UIScrollView+MJExtension.m in Sources */,
 				6301B7971D8111340002B283 /* MJRefreshFooterView.m in Sources */,
 				635F25E71D98FCF00022177C /* ThreeModel.m in Sources */,
 				632A69711D8695E200FC0F81 /* RequestViewModel.m in Sources */,
+				63E0B84E1D9A151100267AF9 /* DateView.m in Sources */,
 				6301B76E1D80FB280002B283 /* TableViewCell.m in Sources */,
+				63E0B8781D9A4CE200267AF9 /* CompareModel.m in Sources */,
 				634573661D878F3D00C48B3A /* DanMaViewController.m in Sources */,
 				634573801D87A60B00C48B3A /* DMHeadView.m in Sources */,
 				6301B7981D8111340002B283 /* MJRefreshHeaderView.m in Sources */,
@@ -519,6 +632,7 @@
 				7AB94FD11D803C5F00159ADE /* AppDelegate.m in Sources */,
 				6301B77F1D8111280002B283 /* AFSecurityPolicy.m in Sources */,
 				6345736E1D879FAA00C48B3A /* DanmaViewModel.m in Sources */,
+				63E0B8701D9A4CBD00267AF9 /* ComparePublicModel.m in Sources */,
 				6301B79A1D8111340002B283 /* UIScrollView+MJRefresh.m in Sources */,
 				6301B79B1D8111340002B283 /* UIView+MJExtension.m in Sources */,
 				6301B7801D8111280002B283 /* AFURLRequestSerialization.m in Sources */,
@@ -528,7 +642,9 @@
 				6301B7A11D8121880002B283 /* MainModel.m in Sources */,
 				635F25E31D98FCDB0022177C /* ThreeViewModel.m in Sources */,
 				6345736A1D87949800C48B3A /* StarViewController.m in Sources */,
+				63E0B86C1D9A4A3000267AF9 /* CompareTableViewCell.m in Sources */,
 				634573771D87A07500C48B3A /* DanmaModel.m in Sources */,
+				63E0B8681D9A49E400267AF9 /* CompareHeadView.m in Sources */,
 				6301B7951D8111340002B283 /* MJRefreshBaseView.m in Sources */,
 				6301B7811D8111280002B283 /* AFURLResponseSerialization.m in Sources */,
 				635F25D51D98F5310022177C /* ThreeStarViewController.m in Sources */,
@@ -536,10 +652,10 @@
 				6301B77D1D8111280002B283 /* AFHTTPSessionManager.m in Sources */,
 				634573841D87A65000C48B3A /* DMTableViewCell.m in Sources */,
 				6301B7961D8111340002B283 /* MJRefreshConst.m in Sources */,
+				63E0B8741D9A4CCA00267AF9 /* CompareViewModel.m in Sources */,
 				6301B79E1D811F090002B283 /* HttpTool.m in Sources */,
 				632A69751D8695F100FC0F81 /* RequestModel.m in Sources */,
 				632A69791D86997300FC0F81 /* CSVModel.m in Sources */,
-				63663F9A1D8634DF00172D6C /* BottomView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,7 +716,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "9b5eacd7-6ff3-401b-8254-945a7d57fdd2";
+				PROVISIONING_PROFILE = "d61f50f3-ae18-46c6-8701-1cb1d748b307";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -642,7 +758,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "9b5eacd7-6ff3-401b-8254-945a7d57fdd2";
+				PROVISIONING_PROFILE = "d61f50f3-ae18-46c6-8701-1cb1d748b307";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -653,8 +769,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Bin Zhang (V7GV47DN5L)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bin Zhang (V7GV47DN5L)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Guodong(Beijing) Network Technology Co., Ltd. (W3F8ZLM4DL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Guodong(Beijing) Network Technology Co., Ltd. (W3F8ZLM4DL)";
 				DEVELOPMENT_TEAM = W3F8ZLM4DL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -671,8 +787,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.guodong.ssc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ce964797-6c6c-48ac-a677-1b27c6c258a6";
-				PROVISIONING_PROFILE_SPECIFIER = "SSC开发配置";
+				PROVISIONING_PROFILE = "d61f50f3-ae18-46c6-8701-1cb1d748b307";
+				PROVISIONING_PROFILE_SPECIFIER = SSCAOC;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -681,8 +797,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Bin Zhang (V7GV47DN5L)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bin Zhang (V7GV47DN5L)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Guodong(Beijing) Network Technology Co., Ltd. (W3F8ZLM4DL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Guodong(Beijing) Network Technology Co., Ltd. (W3F8ZLM4DL)";
 				DEVELOPMENT_TEAM = W3F8ZLM4DL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -699,8 +815,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.guodong.ssc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ce964797-6c6c-48ac-a677-1b27c6c258a6";
-				PROVISIONING_PROFILE_SPECIFIER = "SSC开发配置";
+				PROVISIONING_PROFILE = "d61f50f3-ae18-46c6-8701-1cb1d748b307";
+				PROVISIONING_PROFILE_SPECIFIER = SSCAOC;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
