@@ -15,7 +15,7 @@
 @property (nonatomic,strong)  UILabel *publishLabel;
 @property (nonatomic,strong)  UILabel *totalLabel;
 @property (nonatomic,strong)  UILabel *YNLabel;
-
+@property (nonatomic,strong)  UILabel *oddOrEven;
 
 @property (nonatomic,strong) MainModel *mainModel;
 

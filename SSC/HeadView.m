@@ -54,17 +54,44 @@
     [self addSubview:publishLabel];
     
     UILabel *totalLabel = [[UILabel alloc] init];
-    totalLabel.frame    = CGRectMake(CGRectGetMaxX(publishLabel.frame), 0, labelWidth, Adaptive(60));
+    totalLabel.frame    = CGRectMake(CGRectGetMaxX(publishLabel.frame), 0, labelWidth, Adaptive(40));
     totalLabel.text     = @"和值";
     totalLabel.textAlignment = 1;
     totalLabel.textColor = [UIColor blackColor];
     totalLabel.font      = [UIFont systemFontOfSize:Adaptive(14)];
     [self addSubview:totalLabel];
     
+    // 奇数灰底黑字  偶数蓝底白字
+    _evenLabel = [[UILabel alloc] init];
+    _evenLabel.frame    = CGRectMake(CGRectGetMaxX(publishLabel.frame),
+                                    CGRectGetMaxY(totalLabel.frame),
+                                    labelWidth / 2,
+                                    Adaptive(19.5));
+    _evenLabel.textAlignment = 1;
+    //_evenLabel.text = @"6";
+    _evenLabel.textColor = [UIColor whiteColor];
+    _evenLabel.backgroundColor = [UIColor colorWithRed:28/255.0 green:107/255.0 blue:214/255.0 alpha:1];
+    _evenLabel.font      = [UIFont systemFontOfSize:Adaptive(14)];
+    [self addSubview:_evenLabel];
+    
+    
+    _oddLabel = [[UILabel alloc] init];
+    _oddLabel.frame    = CGRectMake(CGRectGetMaxX(_evenLabel.frame),
+                                     CGRectGetMaxY(totalLabel.frame),
+                                     labelWidth / 2,
+                                     Adaptive(19.5));
+    _oddLabel.textAlignment = 1;
+   // _oddLabel.text = @"10";
+    _oddLabel.textColor = [UIColor blackColor];
+    _oddLabel.backgroundColor = [UIColor lightGrayColor];
+    _oddLabel.font      = [UIFont systemFontOfSize:Adaptive(14)];
+    [self addSubview:_oddLabel];
+
+    
+    
     
     _YLabel = [[UILabel alloc] init];
     _YLabel.frame    = CGRectMake(CGRectGetMaxX(totalLabel.frame), Adaptive(1), labelWidth, Adaptive(28.5));
-//YLabel.text = @"hahaha";
     _YLabel.textAlignment = 1;
     _YLabel.textColor = [UIColor blackColor];
     _YLabel.backgroundColor = [UIColor colorWithRed:0 green:177/255.0 blue:88/255.0 alpha:1];

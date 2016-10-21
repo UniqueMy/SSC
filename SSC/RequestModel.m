@@ -29,14 +29,28 @@
     
     NSArray *dataArray          = [dict objectForKey:@"result"];
     NSMutableArray *returnArray = [NSMutableArray array];
-    NSDictionary *returnDict    = @{@"yes":[dict objectForKey:@"yes"],
-                                    @"no":[dict objectForKey:@"no"]};
     
+    int oddNumber = 0;
     
     for (NSDictionary *dict in dataArray) {
          MainModel *mainModel = [[MainModel alloc] initWithDict:dict];
         [returnArray addObject:mainModel];
+        
+        if (mainModel.oddOrEven == 1) {
+            oddNumber ++;
+        }
+        
     }
+    
+    NSString *oddNumberString  = [NSString stringWithFormat:@"%d",oddNumber];
+    NSString *evenNumberString = [NSString stringWithFormat:@"%d",(int)dataArray.count - oddNumber];
+    
+    
+    NSDictionary *returnDict    = @{@"yes" :[dict objectForKey:@"yes"],
+                                    @"no"  :[dict objectForKey:@"no"],
+                                    @"odd" :oddNumberString,
+                                    @"even":evenNumberString};
+    
     
     self.ReturnValueDict(returnDict);
     self.returnBlock(returnArray);

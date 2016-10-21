@@ -9,7 +9,6 @@
 #import "CompareViewController.h"
 #import "CompareHeadView.h"
 #import "CompareTableViewCell.h"
-
 #import "CompareModel.h"
 #import "ComparePublicModel.h"
 @interface CompareViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -110,10 +109,7 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-   
          return allDataArray.count;
-   
-    
    
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

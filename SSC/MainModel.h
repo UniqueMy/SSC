@@ -15,7 +15,7 @@
 @property (nonatomic,strong) NSString *totalString;       // 和值
 @property (nonatomic,strong) NSString *publishString;     // 开奖结果
 @property (nonatomic)        BOOL      trueOrFalse;       // 中与没中
-
+@property (nonatomic)        BOOL      oddOrEven;         // 奇数和还是偶数和
 
 - (instancetype)initWithDict:(NSDictionary *)dict;
 @end

@@ -102,8 +102,10 @@
         
     } Dict:^(NSDictionary *dict) {
         
-        headView.YLabel.text = [NSString stringWithFormat:@"Y:%@",[dict objectForKey:@"yes"]];
-        headView.NLabel.text = [NSString stringWithFormat:@"N:%@",[dict objectForKey:@"no"]];
+        headView.YLabel.text    = [NSString stringWithFormat:@"Y:%@",[dict objectForKey:@"yes"]];
+        headView.NLabel.text    = [NSString stringWithFormat:@"N:%@",[dict objectForKey:@"no"]];
+        headView.oddLabel.text  = [dict objectForKey:@"odd"];
+        headView.evenLabel.text = [dict objectForKey:@"even"];
         
     }];
     

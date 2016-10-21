@@ -52,15 +52,24 @@
         [self addSubview:_publishLabel];
         
         _totalLabel = [[UILabel alloc] init];
-        _totalLabel.frame    = CGRectMake(CGRectGetMaxX(_publishLabel.frame), 0, labelWidth, Adaptive(30));
+        _totalLabel.frame    = CGRectMake(CGRectGetMaxX(_publishLabel.frame), 0, labelWidth / 2, Adaptive(30));
         _totalLabel.text     = @"23";
         _totalLabel.textAlignment = 1;
         _totalLabel.textColor = [UIColor blackColor];
         _totalLabel.font      = [UIFont systemFontOfSize:Adaptive(13)];
         [self addSubview:_totalLabel];
         
+        _oddOrEven = [[UILabel alloc] init];
+        _oddOrEven.frame    = CGRectMake(CGRectGetMaxX(_totalLabel.frame), 0, labelWidth / 2, Adaptive(29));
+        _oddOrEven.textAlignment = 1;
+      //  _oddOrEven.textColor = [UIColor blackColor];
+        _oddOrEven.font      = [UIFont systemFontOfSize:Adaptive(13)];
+        [self addSubview:_oddOrEven];
+        
+        
+        
         _YNLabel = [[UILabel alloc] init];
-        _YNLabel.frame    = CGRectMake(CGRectGetMaxX(_totalLabel.frame) +Adaptive(1) ,0, labelWidth - 1, Adaptive(29));
+        _YNLabel.frame    = CGRectMake(CGRectGetMaxX(_oddOrEven.frame) +Adaptive(1) ,0, labelWidth - 1, Adaptive(29));
         _YNLabel.text     = @"Y";
         _YNLabel.textAlignment = 1;
         _YNLabel.textColor = [UIColor blackColor];
@@ -77,6 +86,10 @@
     _timesNumberLabel.text  = mainModel.timesNumberString;
     _publishLabel.text      = mainModel.publishString;
     _totalLabel.text        = mainModel.totalString;
+    
+    
+    _oddOrEven.backgroundColor = mainModel.oddOrEven == 0 ? [UIColor colorWithRed:28/255.0 green:107/255.0 blue:214/255.0 alpha:1] : [UIColor lightGrayColor];
+    
     
     if (mainModel.trueOrFalse == YES) {
         

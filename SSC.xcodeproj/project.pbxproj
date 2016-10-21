@@ -63,6 +63,8 @@
 		635F25EB1D98FF670022177C /* ThreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 635F25E91D98FF670022177C /* ThreeTableViewCell.m */; };
 		635F25ED1D9908580022177C /* 三星.csv in Resources */ = {isa = PBXBuildFile; fileRef = 635F25EC1D9908580022177C /* 三星.csv */; };
 		63663F9C1D86399F00172D6C /* sanjiao.png in Resources */ = {isa = PBXBuildFile; fileRef = 63663F9B1D86399F00172D6C /* sanjiao.png */; };
+		63689C451DA8D3040054BD1C /* 五星偶和.csv in Resources */ = {isa = PBXBuildFile; fileRef = 63689C431DA8D3040054BD1C /* 五星偶和.csv */; };
+		63689C461DA8D3040054BD1C /* 五星奇和.csv in Resources */ = {isa = PBXBuildFile; fileRef = 63689C441DA8D3040054BD1C /* 五星奇和.csv */; };
 		63E0B84D1D9A151100267AF9 /* DateView.h in Headers */ = {isa = PBXBuildFile; fileRef = 63E0B84B1D9A151100267AF9 /* DateView.h */; };
 		63E0B84E1D9A151100267AF9 /* DateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E0B84C1D9A151100267AF9 /* DateView.m */; };
 		63E0B8501D9A3C8C00267AF9 /* 组三.csv in Resources */ = {isa = PBXBuildFile; fileRef = 63E0B84F1D9A3C8C00267AF9 /* 组三.csv */; };
@@ -179,6 +181,8 @@
 		636792381D866C480064B924 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6367923B1D86707C0064B924 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		6367923D1D8679EA0064B924 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		63689C431DA8D3040054BD1C /* 五星偶和.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "五星偶和.csv"; sourceTree = "<group>"; };
+		63689C441DA8D3040054BD1C /* 五星奇和.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "五星奇和.csv"; sourceTree = "<group>"; };
 		63E0B84B1D9A151100267AF9 /* DateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateView.h; sourceTree = "<group>"; };
 		63E0B84C1D9A151100267AF9 /* DateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateView.m; sourceTree = "<group>"; };
 		63E0B84F1D9A3C8C00267AF9 /* 组三.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "组三.csv"; sourceTree = "<group>"; };
@@ -416,6 +420,8 @@
 		7A7771021D80512300E22BAF /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				63689C431DA8D3040054BD1C /* 五星偶和.csv */,
+				63689C441DA8D3040054BD1C /* 五星奇和.csv */,
 				63E0B84F1D9A3C8C00267AF9 /* 组三.csv */,
 				632A697A1D8699C100FC0F81 /* 胆码.csv */,
 				632A697C1D8699DC00FC0F81 /* 五星数据.csv */,
@@ -597,7 +603,9 @@
 				7AB94FDC1D803C5F00159ADE /* LaunchScreen.storyboard in Resources */,
 				7AB94FD91D803C5F00159ADE /* Assets.xcassets in Resources */,
 				6301B7941D8111340002B283 /* MJRefresh.bundle in Resources */,
+				63689C451DA8D3040054BD1C /* 五星偶和.csv in Resources */,
 				63663F9C1D86399F00172D6C /* sanjiao.png in Resources */,
+				63689C461DA8D3040054BD1C /* 五星奇和.csv in Resources */,
 				632A697D1D8699DC00FC0F81 /* 五星数据.csv in Resources */,
 				63E0B8501D9A3C8C00267AF9 /* 组三.csv in Resources */,
 				632A697B1D8699C100FC0F81 /* 胆码.csv in Resources */,
@@ -716,7 +724,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "d61f50f3-ae18-46c6-8701-1cb1d748b307";
+				PROVISIONING_PROFILE = "0ebf8c70-2384-48af-9396-19f8219513ff";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -758,7 +766,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "d61f50f3-ae18-46c6-8701-1cb1d748b307";
+				PROVISIONING_PROFILE = "0ebf8c70-2384-48af-9396-19f8219513ff";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -787,8 +795,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.guodong.ssc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d61f50f3-ae18-46c6-8701-1cb1d748b307";
-				PROVISIONING_PROFILE_SPECIFIER = SSCAOC;
+				PROVISIONING_PROFILE = "0ebf8c70-2384-48af-9396-19f8219513ff";
+				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: com.guodong.ssc";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -815,8 +823,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.guodong.ssc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d61f50f3-ae18-46c6-8701-1cb1d748b307";
-				PROVISIONING_PROFILE_SPECIFIER = SSCAOC;
+				PROVISIONING_PROFILE = "0ebf8c70-2384-48af-9396-19f8219513ff";
+				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: com.guodong.ssc";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

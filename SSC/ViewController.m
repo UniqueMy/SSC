@@ -92,6 +92,26 @@
         
     });
     
+    dispatch_queue_t async4 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    dispatch_async(async4, ^{
+        
+        CSVModel *csv = [CSVModel sharedModelManager];
+        csv.fiveStarOddArray = [HttpTool readCSVDataWithNSString:@"五星奇和"];
+        [csv.fiveStarOddArray removeLastObject];
+        
+    });
+    
+    dispatch_queue_t async5 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    dispatch_async(async5, ^{
+        
+        CSVModel *csv = [CSVModel sharedModelManager];
+        csv.fiveStarEvenArray = [HttpTool readCSVDataWithNSString:@"五星偶和"];
+        [csv.fiveStarEvenArray removeLastObject];
+        
+    });
+    
 }
 
 - (void)buttonClick:(UIButton *)button {

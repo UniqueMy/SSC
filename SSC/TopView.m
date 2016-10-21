@@ -17,24 +17,11 @@
     NSString         *fiveCopyString;
     NSString         *threeCopyString;
     NSString         *groupThreeString;
+    NSString         *fiveStarOddString;
+    NSString         *fiveStarEvenString;
     
 }
 
-//- (DateView *)dateView {
-//    
-//    if (!_dateView) {
-//    
-//        AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
-//        
-//        _dateView       = [[DateView alloc] init];
-//        _dateView.frame = CGRectMake(0,
-//                                     viewHeight - 216 - Adaptive(40),
-//                                     viewWidth,
-//                                     216 + Adaptive(40));
-//        [app.window addSubview:_dateView];
-//    }
-//    return _dateView;
-//}
 
 - (instancetype)initWithFrame:(CGRect)frame viewController:(UIViewController *)controller
 {
@@ -49,7 +36,7 @@
 
 - (void)createMainView {
     topLabel           = [[UILabel alloc] init];
-    topLabel.frame     = CGRectMake(Adaptive(13), 20 + (44 - Adaptive(15)) / 2, viewWidth / 2, Adaptive(15));
+    topLabel.frame     = CGRectMake(Adaptive(13), 20 + (44 - Adaptive(15)) / 2,Adaptive(100), Adaptive(15));
     
     topLabel.textColor = [UIColor whiteColor];
     topLabel.font      = [UIFont systemFontOfSize:Adaptive(15)];
@@ -101,36 +88,49 @@
     [self addSubview:copyGroupThree];
     
     
+    UIButton *copyFiveStarOdd = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    copyFiveStarOdd.frame     = CGRectMake(viewWidth - Adaptive(263), 20 + (44 - Adaptive(20)) / 2, Adaptive(50), Adaptive(20));
+    copyFiveStarOdd.layer.cornerRadius  = 3;
+    copyFiveStarOdd.layer.masksToBounds = YES;
+    copyFiveStarOdd.layer.borderWidth   = 1;
+    copyFiveStarOdd.layer.borderColor   = [UIColor whiteColor].CGColor;
+    [copyFiveStarOdd setTitle:@"五星奇" forState:UIControlStateNormal];
+    copyFiveStarOdd.titleLabel.font = [UIFont systemFontOfSize:Adaptive(13)];
+    [copyFiveStarOdd setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [copyFiveStarOdd addTarget:self action:@selector(copyFiveStarOdd:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:copyFiveStarOdd];
     
-//    UIButton *chooseDate = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//    chooseDate.frame     = CGRectMake(viewWidth - Adaptive(203), 20 + (44 - Adaptive(20)) / 2, Adaptive(40), Adaptive(20));
-//    chooseDate.layer.cornerRadius  = 3;
-//    chooseDate.layer.masksToBounds = YES;
-//    chooseDate.layer.borderWidth   = 1;
-//    chooseDate.layer.borderColor   = [UIColor whiteColor].CGColor;
-//    [chooseDate setTitle:@"日期" forState:UIControlStateNormal];
-//    chooseDate.titleLabel.font = [UIFont systemFontOfSize:Adaptive(13)];
-//    [chooseDate setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//    [chooseDate addTarget:self action:@selector(chooseDate:) forControlEvents:UIControlEventTouchUpInside];
-//    [self addSubview:chooseDate];
+    
+    UIButton *copyFiveStarEven = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    copyFiveStarEven.frame     = CGRectMake(viewWidth - Adaptive(313),
+                                            20 + (44 - Adaptive(20)) / 2,
+                                            Adaptive(50),
+                                            Adaptive(20));
+    copyFiveStarEven.layer.cornerRadius  = 3;
+    copyFiveStarEven.layer.masksToBounds = YES;
+    copyFiveStarEven.layer.borderWidth   = 1;
+    copyFiveStarEven.layer.borderColor   = [UIColor whiteColor].CGColor;
+    [copyFiveStarEven setTitle:@"五星偶" forState:UIControlStateNormal];
+    copyFiveStarEven.titleLabel.font = [UIFont systemFontOfSize:Adaptive(13)];
+    [copyFiveStarEven setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [copyFiveStarEven addTarget:self action:@selector(copyFiveStarEven:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:copyFiveStarEven];
+    
     
     [self copyData];
     
     
-   
+    
     
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    topLabel.text    = [NSString stringWithFormat:@"%@时时彩数据统计",_viewName];
+    topLabel.text    = [NSString stringWithFormat:@"%@",_viewName];
 }
 
-//- (void)chooseDate:(UIButton *)button {
-// 
-//    [self dateView];
-//    
-//}
+
+
 
 - (void)copyData {
     
@@ -155,6 +155,20 @@
     dispatch_async(async3, ^{
         
         groupThreeString = [csv.groupThreeArray componentsJoinedByString:@","];
+    });
+    
+    dispatch_queue_t async4 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    dispatch_async(async4, ^{
+        // 奇
+        fiveStarOddString = [csv.fiveStarOddArray componentsJoinedByString:@","];
+    });
+    
+    dispatch_queue_t async5 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    dispatch_async(async5, ^{
+        // 偶
+        fiveStarEvenString = [csv.fiveStarEvenArray componentsJoinedByString:@","];
     });
     
 }
@@ -209,7 +223,39 @@
         }];
     });
 }
+- (void)copyFiveStarEven:(UIButton *)button {
+    
+    dispatch_queue_t async1 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(async1, ^{
+        
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        pasteboard.string = fiveStarEvenString;
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"复制五星偶和成功" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [viewController presentViewController:alertController animated:YES completion:^{
+            [NSTimer scheduledTimerWithTimeInterval:0.5f target:self selector:@selector(creatAlert:) userInfo:alertController repeats:NO];
+            
+            
+        }];
+    });
+    
+}
 
+- (void)copyFiveStarOdd:(UIButton *)button {
+    dispatch_queue_t async1 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(async1, ^{
+        
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        pasteboard.string = fiveStarOddString;
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"复制五星奇和成功" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [viewController presentViewController:alertController animated:YES completion:^{
+            [NSTimer scheduledTimerWithTimeInterval:0.5f target:self selector:@selector(creatAlert:) userInfo:alertController repeats:NO];
+            
+            
+        }];
+    });
+}
 
 - (void)creatAlert:(NSTimer *)timer{
     

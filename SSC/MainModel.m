@@ -20,6 +20,12 @@
         _publishString     = [dict objectForKey:@"result"];
         _trueOrFalse       = [[dict objectForKey:@"compare_result"] boolValue];
         
+       
+            // 偶数 == 0  奇数 == 1
+            _oddOrEven = [_totalString intValue] % 2 == 0 ? 0 : 1;
+        
+        
+        
     }
     return self;
 }

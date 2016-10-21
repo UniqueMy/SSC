@@ -11,5 +11,5 @@
 @interface HeadView : UIView
 
 @property (nonatomic,strong) UILabel *YLabel,*NLabel;
-
+@property (nonatomic,strong) UILabel *oddLabel,*evenLabel;
 @end
